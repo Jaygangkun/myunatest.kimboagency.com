@@ -1,0 +1,37 @@
+body.login {
+  background-color: #354305;
+  background-image: url('../images/Hawthorne-hero-min.jpg');
+  background-position: center;
+}
+
+.login #nav {
+  background: rgba(255,255,255,0.9);
+    padding-top: 1rem;
+}
+
+.login #backtoblog {
+  background: rgba(255,255,255,0.9);
+  margin-top: 0;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.login #backtoblog a, .login #nav a {
+  font-weight: 600;
+}
+
+.login #backtoblog a:hover {
+  color: #3b7267 !important;
+}
+
+.login #nav a:hover {
+  color: #3b7267 !important;
+}
+
+#login h1 a:focus {
+  box-shadow: none;
+}
+
+#login h1 a:hover {
+  opacity: 0.8;
+}

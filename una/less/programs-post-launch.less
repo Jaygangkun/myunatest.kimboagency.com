@@ -1,0 +1,406 @@
+.frontpage-card-category span.program-number {
+  pointer-events: none;
+  > a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+#activities_loop_1,
+#activities_loop_2 {
+  .flex-direction-nav li a.flex-prev,
+  .flex-direction-nav li a.flex-next {
+    top: 0 !important;
+  }
+}
+
+#activities_loop_2 .flex-direction-nav {
+  display: none;
+  &.display {
+    display: block;
+  }
+}
+
+#activities_loop_2 .alert-container {
+  display: none;
+  &.display {
+    display: flex;
+  }
+}
+
+.home .operation-hours-section .operation-hours-card {
+  height: 260px;
+}
+
+div.facilities-hours-info.regular {
+  padding: 2px;
+  color: @black;
+  font-weight: 500;
+}
+
+.row.program-date {
+  padding-top: 7px;
+}
+
+//Alert For No Programs
+.activities-time-loop {
+  .alert-container {
+    justify-content: flex-start;
+    background: @white;
+  }
+}
+
+.alert-box a:hover {
+  text-decoration: none;
+}
+
+.closing-info.facilities-hours-info.regular {
+  color: #ed1a1a;
+  font-weight: 700;
+}
+
+.page-our-facilities {
+  .operation-hours-card {
+    h5 {
+      font-weight: 500;
+      padding: 15px 0;
+    }
+  }
+}
+
+.program-course-number {
+  display: flex;
+  justify-content: flex-end;
+}
+
+//Position Results
+
+#activities_loop_1,
+#activities_loop_2 {
+  .number-results {
+    top: 628px !important;
+  }
+}
+
+//This is for the cards height
+.page-programs {
+  .activities-loop {
+    .registration,
+    .description {
+      height: 110px;
+      border-bottom: 0;
+    }
+    div.frontpage-card {
+      height: 560px;
+    }
+  }
+}
+
+a.learn-more-pm {
+  color: #44bc9b;
+  &:hover {
+    color: #41a288;
+    text-decoration: none;
+  }
+}
+
+.col-12.program-course-number.course-id-only {
+  justify-content: flex-start;
+}
+
+//Front Page News
+.home .top-section-container-wrapper {
+  background: @white;
+}
+
+.page-governance
+  .section-wrapper.calendar-section.all-events-calendar-section.latest-news-carousel-section {
+  background: @white;
+  div.flexslider {
+    background: @white;
+  }
+}
+
+// @media screen and (max-width: 1199px) {
+//   .home .operation-hours-section .operation-hours-card {
+//     height: 370px !important;
+//   }
+// }
+
+// @media screen and (max-width: 991px) {
+//   .home .operation-hours-section .operation-hours-card {
+//     height: 400px !important;
+//   }
+// }
+
+a.learn-more-pm:hover {
+  color: #414042;
+  font-weight: bold;
+}
+
+.pages-search-button {
+  display: block;
+  &.hide {
+    display: none;
+  }
+}
+
+.search {
+  .programs-filter .activities-loop.event-column {
+    text-align: left;
+  }
+  .section-wrapper.calendar-section.all-events-calendar-section,
+  #calendar-error-message {
+    background: #fff;
+  }
+  .number-results {
+    left: 0% !important;
+  }
+  .activities-time-loop {
+    background: #f3f4f6;
+    h2 {
+      text-align: center;
+      padding: 2rem 0;
+    }
+  }
+  #programs-error-message {
+    color: #3b7267;
+    font-weight: 500;
+    font-size: 20px;
+    padding-top: 2rem;
+    text-align: center;
+  }
+}
+
+//List view styling
+.filtered-programs-list-container {
+  list-style: none;
+  .program-image {
+    display: flex;
+    align-items: center;
+    max-width: 20%;
+    .post_image {
+      width: 100%;
+      height: 70%;
+      border-radius: 10px;
+    }
+  }
+  .events-subject {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .program-date {
+    display: flex;
+  }
+  .clock-icon {
+    margin-right: 10px;
+  }
+  .details-and-registration {
+    display: flex;
+  }
+  .activities-button {
+    .selector {
+      text-align: left;
+      margin-bottom: 0.5rem;
+      color: #3b7267;
+      text-transform: uppercase;
+      font-size: 13px;
+      padding-left: 0;
+    }
+  }
+  .description-registration-wrapper {
+    margin-left: 1.5rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .registration {
+    width: 100%;
+    height: 75% !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .details-item {
+      width: 49%;
+      display: flex;
+      .fa {
+        margin-right: 10px;
+      }
+      .col-10 {
+        padding-left: 5px;
+      }
+    }
+  }
+  .button-for-registration {
+    width: 49%;
+    .button-wrapper-for-program-loop {
+      width: 100%;
+      background: #bfd8d3;
+      position: inherit;
+      height: 30px;
+      button {
+        color: black;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.list-description-container {
+  width: 86px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.events-section
+  .filtered-programs-list-container
+  div.frontpage-card
+  .frontpage-card-title {
+  margin-bottom: 0;
+  color: #3b7267;
+  line-height: 1.2;
+  font-size: 17px;
+}
+
+.events-section
+  .filtered-programs-list-container
+  div.frontpage-card
+  .frontpage-card-category {
+  padding-top: 0;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.right-border-span {
+  border-right: 1px solid #e2e2e3;
+  padding-right: 15px;
+}
+
+.page-programs {
+  .list-view {
+    div.frontpage-card {
+      height: 150px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+//Tims edit for List View Toggle
+
+.filtered-programs-section ul.filtered-programs-list-container {
+  opacity: 0 !important;
+  height: 0;
+  overflow: hidden;
+  &.display {
+    opacity: 1 !important;
+    height: auto;
+    overflow: visible;
+  }
+}
+
+.main-carousel.filtered-programs-container {
+  &.hide {
+    opacity: 0;
+    height: 0;
+    margin-bottom: 0;
+  }
+}
+
+.filtered-programs-section#activities_loop_1
+  .filtered-programs-list-container
+  .number-results {
+  top: 0 !important;
+  position: relative;
+}
+
+.toggle-button-container {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  li {
+    cursor: pointer;
+    text-transform: capitalize;
+    color: #414042;
+    border-bottom: 4px solid #418477;
+    margin-right: 20px;
+    font-weight: 550;
+  }
+  li:first-child {
+    border-bottom: 4px solid #e9e980;
+  }
+}
+
+//Responsive Styling for List View
+@media only screen and (max-width: 991px) {
+  .page-programs .list-view div.frontpage-card {
+    height: 100%;
+    .program-image {
+      max-width: 100%;
+    }
+    .post_image {
+      min-height: 220px;
+      margin: 1rem 0;
+      width: 100%;
+    }
+    .events-subject {
+      padding: 1rem;
+    }
+    .right-border-span {
+      border-right: 0;
+    }
+
+    .details-and-registration {
+      flex-direction: column;
+    }
+    .list-description-container {
+      width: 100%;
+      flex-direction: row;
+      /* justify-content: center; */
+      justify-content: center;
+    }
+    .description-registration-wrapper {
+      width: 100%;
+      margin-bottom: 2rem;
+      margin-left: 0;
+    }
+    .button-wrapper-for-program-loop {
+      margin: 10px 0;
+    }
+  }
+}
+
+// Featured Programs
+.featured-programs.activities-time-loop {
+  div.flexslider {
+    background: #fff;
+  }
+  .number-results {
+    top: 640px !important;
+  }
+  .flexslider .flex-direction-nav li a.flex-prev,
+  .flexslider .flex-direction-nav li a.flex-next {
+    top: 16px !important;
+  }
+  .registration,
+  .description {
+    border-bottom: 0;
+  }
+}
+
+//List View Card
+.filtered-programs-container .list-view .frontpage-card{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .registration{
+        border-bottom: none;
+    }
+}

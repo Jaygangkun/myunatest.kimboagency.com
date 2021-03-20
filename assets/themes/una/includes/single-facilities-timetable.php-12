@@ -1,0 +1,150 @@
+
+<!--API FOR LOCATION-->
+<?php 
+$data;
+
+$data['QueryString'] = "SELECT Name, ID FROM Custom.Location WHERE ( Name = 'Old Barn Community Centre') OR ( Name = 'Wesbrook Community Centre') OR ( Name = 'Wesbrook Fitness Centre') OR ( Name = 'UNA Main Office')";
+
+$handle = curl_init();
+
+$url = "https://myuna.perfectmind.com/api/2.0/B2C/Query";
+
+curl_setopt_array($handle,
+  array(
+    CURLOPT_URL            => $url,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_CUSTOMREQUEST => "POST",
+    CURLOPT_POSTFIELDS => 
+    json_encode($data),
+    CURLOPT_HTTPHEADER => array(
+      "X-Access-Key: 5I8bxF2WG9nFZ0rf5zxW3tGlN0aSJDr9",
+      "X-Client-Number: 24588",
+      "Content-Type: application/json"
+    ),
+  )
+);
+
+echo curl_error($handle);
+
+$output = curl_exec($handle);
+$data = json_decode($output,true);
+curl_close($handle);
+?>
+<!-- End of API for Location-->
+
+<!-- Start of API For Operation hours-->
+<?php 
+$data2;
+$data2['QueryString'] = "SELECT ID, LocationId, DayId, StartTime, EndTime FROM Custom.OperationHours WHERE LocationId = 'da4f4609-d76b-41f0-a517-ca525d71c914' OR LocationId = '1460086f-b904-4373-833b-72f094a08205';" ;
+$handle = curl_init();
+
+$url = "https://myuna.perfectmind.com/api/2.0/B2C/Query";
+
+curl_setopt_array($handle,
+  array(
+    CURLOPT_URL            => $url,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_CUSTOMREQUEST => "POST",
+    CURLOPT_POSTFIELDS => 
+    json_encode($data2),
+    CURLOPT_HTTPHEADER => array(
+      "X-Access-Key: 5I8bxF2WG9nFZ0rf5zxW3tGlN0aSJDr9",
+      "X-Client-Number: 24588",
+      "Content-Type: application/json"
+    ),
+  )
+);
+
+echo curl_error($handle);
+
+$output = curl_exec($handle);
+$data2 = json_decode($output,true);
+curl_close($handle);
+?>
+
+
+
+
+<?php
+$out = [];
+foreach ($data2 as $key => $x) {
+  $sub = $x['EndTime'];
+  $out[$sub]['DayIds'][] = $x['DayId'];
+  $out[$sub]['StartTime'] = $x['StartTime'];
+  $out[$sub]['EndTime'] = $x['EndTime'];
+  $out[$sub]['LocationId'][] = $x['LocationId'];
+}
+
+$final = array_values($out); ?>
+<!-- End of API for Operation Hours-->
+
+
+
+<?php foreach ($data2 as $rkey => $resource){
+    if ($resource['LocationId'] == 'da4f4609-d76b-41f0-a517-ca525d71c914'){
+        $fitness[] = $resource;
+    } else if ($resource['LocationId'] == '1460086f-b904-4373-833b-72f094a08205') {
+        $community[] = $resource;
+  }}  ?>
+
+<?php
+$out = [];
+foreach ($fitness as $key => $x) {
+  $sub = $x['EndTime'];
+  $out[$sub]['DayIds'][] = $x['DayId'];
+  $out[$sub]['StartTime'] = $x['StartTime'];
+  $out[$sub]['EndTime'] = $x['EndTime'];
+  $out[$sub]['LocationId'][] = $x['LocationId'];
+}
+
+$finalFitness = array_values($out); ?>
+
+
+
+ <div class="operation-hours-card">
+               <div class="top-section">
+
+      <h5>Community Centre</h4>
+      
+      <?php if(!empty($community)) { ?>
+
+                  <div class="facilities-hours-info regular"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                Mon - Thu: <?php echo date('h:i A', strtotime($community[5]['StartTime'])); ?> - <?php echo date('h:i A', strtotime($community[5]['EndTime'])); ?>
+                </div>
+                <div class="facilities-hours-info regular"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                 Fri: <?php echo date('h:i A', strtotime($community[6]['StartTime'])); ?> - <?php echo date('h:i A', strtotime($community[6]['EndTime'])); ?>
+                </div>
+                <div class="facilities-hours-info regular"><i class="fa fa-clock-o" aria-hidden="true"></i>
+               Sat, Sun: <?php echo date('h:i A', strtotime($community[3]['StartTime'])); ?> - <?php echo date('h:i A', strtotime($community[3]['EndTime'])); ?>
+               </div>  
+               
+               
+<?php } else { ?>
+   <div class="facilities-hours-info closing-info regular"><i class="fa fa-clock-o" aria-hidden="true"></i>
+      Closed until further notice
+  </div>
+<?php } ?>
+                </div>
+                <h5>Fitness Centre</h4>
+<?php if(!empty($finalFitness)) { ?>
+
+<div class="facilities-hours-info regular"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                Mon - Thu: <?php echo date('h:i A', strtotime($finalFitness[0]['StartTime'])); ?> - <?php echo date('h:i A', strtotime($finalFitness[0]['EndTime'])); ?>
+                </div>
+                <div class="facilities-hours-info regular"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                Fri: <?php echo date('h:i A', strtotime($finalFitness[1]['StartTime'])); ?> - <?php echo date('h:i A', strtotime($finalFitness[1]['EndTime'])); ?>
+                </div>
+                <div class="facilities-hours-info regular"><i class="fa fa-clock-o" aria-hidden="true"></i>
+               Sat, Sun: <?php echo date('h:i A', strtotime($finalFitness[2]['StartTime'])); ?> - <?php echo date('h:i A', strtotime($finalFitness[2]['EndTime'])); ?>
+         </div>
+         
+         <?php } else { ?>
+   <div class="facilities-hours-info closing-info regular"><i class="fa fa-clock-o" aria-hidden="true"></i>
+      Closed until further notice
+  </div>
+<?php } ?>
+         
+<?php include('green-depot-timetable.php'); ?>
+            </div>
+
+            

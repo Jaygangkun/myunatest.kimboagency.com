@@ -1,0 +1,96 @@
+.page-sustainability .two-pillars {
+  .single-pillar {
+    height: 680px;
+  }
+  .pillar-blurb {
+    height: auto !important;
+  }
+}
+
+.transportation-buttons {
+  display: flex;
+  .first-button {
+    margin-right: 3rem;
+  }
+}
+
+.transportation-container,
+.collaboration-container {
+  background: #f5f5f5;
+}
+
+.paddingbox.tab {
+  padding-top: 3rem;
+  padding-bottom: 0;
+}
+
+.collaboration-section .single-article-title {
+  color: #418477;
+  padding: 2rem 0;
+  padding-bottom: 1rem;
+}
+
+.green-depot-hours-table {
+  width: 400px;
+  margin: 2rem 0;
+  background: white;
+  border-radius: 10px;
+  border: 0;
+  border-spacing: 0;
+  box-shadow: 0px 3px 9px rgba(0,0,0,0.29);
+  td {
+    padding: 10px;
+  }
+}
+
+.sustainability-box .dashboard-image {
+  padding-top: 3rem;
+  .featured-image {
+    height: 200px;
+    width: 350px;
+  }
+}
+
+.faq.parking-container {
+  background: @white;
+  .first-column-content.parking-map-section {
+    padding: 0;
+    text-align: center;
+  }
+  .green-depot-faq {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    > li {
+      box-shadow: 0px 3px 9px rgba(0,0,0,0.29);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      position: relative;
+      &:hover div.question{
+        color: @darkGreen;
+      }
+
+      .fas {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #9F9F9F;
+        transition: transform 300ms ease;
+        transform: rotate(0deg);
+      }
+
+      div.question {
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 18px;
+        &.open i{
+          transform: rotate(-180deg);
+        }
+      }
+      div.answer {
+        padding-top: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.meeting-documents-area{
+  background-color: #F5F5F5;
+  padding: 40px 0 54px 0;
+
+  .paddingbox{
+    padding-bottom: 30px;
+  }
+
+
+  .row > div {
+    column-count: 2;
+    column-gap: 22px;
+  }
+
+  .meeting-document-with-icon {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    -webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+               break-inside: avoid;
+    img{
+      display: inline-block;
+      width: 26px;
+      height: auto;
+      margin-right: 10px;
+    }
+    a{
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: -0.05px;
+      color: @darkGreen;
+      float: right;
+      &:hover{
+        color: @black;
+      }
+    }
+  }
+}
+
+.page-finance{
+
+  .meeting-documents-area{
+    h2, h3{
+      margin: 0;
+      text-align: center;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.05px;
+      color: @black;
+      &.big-title{
+        font-size: 36px;
+        line-height: 38px;
+        letter-spacing: -0.36px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+
+  .overlay-image .text_area {
+    background: rgba(65,132,119,0.9);
+  }
+
+  .container.top-margin, .meeting-documents-area{
+    margin-top: 50px;
+  }
+
+  a.button{
+    text-align: center;
+    padding: 10px 20px;
+    background: @green;
+    color: @white;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    transition: all 150ms linear;
+    &:hover{
+      color: @gold;
+      background-color: @darkGreen;
+      text-decoration: none;
+    }
+  }
+
+  .main_text{
+    h2, h3, h4, h5, h6{
+      margin: 0 0 16px 0;
+      padding: 0;
+    }
+
+    h2{
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 32px;
+      letter-spacing: -0.28px;
+    }
+
+    h3{
+      font-weight: 600;
+      font-size: 21px;
+      line-height: 26px;
+      letter-spacing: -0.28px;
+    }
+
+
+    p {
+      font-size: 16px;
+      margin: 0 0 16px 0;
+      padding: 0;
+      line-height: 26px;
+      a{
+        font-weight: bold;
+        letter-spacing: -0.03px;
+        color: @green;
+      }
+    }
+  }
+
+}
+
+
+// Board Meetings
+.container.meeting-documents-area{
+  background-color: @white !important;
+}

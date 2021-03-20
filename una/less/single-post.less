@@ -1,0 +1,129 @@
+.single-hero-container {
+  width: 100%;
+  height: 530px;
+  position: relative;
+  .global-alert-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.single-post {
+  h1 {
+    color: #fff;
+  }
+  .single-post-container {
+    a {
+      color: #3b7267;
+      font-weight: 600;
+      &:hover {
+        color: #414042;
+        text-decoration: none;
+      }
+    }
+  }
+  .banner-single-content-box {
+    width: 100%;
+    position: absolute;
+    z-index: 50;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+    min-height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+    .banner-content-wrapper {
+      color: #fff;
+      border: 0;
+      width: 100%;
+      h1 {
+        max-width: 70%;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.banner-content-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    margin-right: 6px;
+    font-size: 14px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.single-hero-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.single-meta-container {
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.single-meta-category {
+  margin-left: 1rem;
+  i {
+    color: #c3c3c3;
+  }
+  a {
+    color: inherit;
+    text-decoration: underline;
+    &:hover {
+      color: #418477;
+    }
+  }
+}
+
+.single-post {
+  .alert-big-container {
+    @media only screen and (min-width: 992px) {
+      max-width: 83.333333%;
+    }
+  }
+}
+
+.single-post-container {
+  margin-top: 4rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .single-post {
+    h1 {
+      font-size: 28px;
+      line-height: 1.5;
+    }
+    .single-meta-container {
+      display: flex;
+      flex-direction: column;
+      margin-left: 15px;
+      .single-meta-category {
+        margin-top: 1rem;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.single-post .banner-content-wrapper {
+  padding-left: 0;
+}

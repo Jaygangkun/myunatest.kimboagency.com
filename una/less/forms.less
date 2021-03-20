@@ -1,0 +1,150 @@
+.gform_wrapper {
+  background: #fff;
+  h2, h3 {
+    color: @darkGreen;
+    border-bottom: 2px solid @darkGreen;
+    padding-bottom: 10px;
+  }
+
+  input {
+    border: 1px solid @darkGreen;
+    border-radius: 0;
+    padding: 10px !important;
+    color: @darkGreen;
+  }
+  .bottom-section {
+    padding-top: 0;
+  }
+  .gform_button {
+    text-align: center;
+    background: #418477;
+    max-width: 200px;
+    position: relative;
+    max-width: 400px;
+    border-radius: 4px;
+    color: #fff;
+    padding: 10px 63px !important;
+  }
+  .gfield_label {
+    font-size: 18px !important;
+  }
+  .gfield_checkbox label {
+    font-size: 16px !important;
+    padding-left: 5px !important;
+    padding-top: 5px !important;
+  }
+  .gform_wrapper textarea {
+    border: 1px solid @darkGreen;
+    border-radius: 0;
+    padding: 10px !important;
+    color: @darkGreen;
+  }
+}
+
+.contact-form-container {
+  #gform_confirmation_message_1 {
+    color: #FFF;
+  }
+  .gform_wrapper {
+    background: transparent;
+    input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+      border-radius: 4px;
+      border: 1px solid #FFF;
+      &:focus {
+        outline: none;
+      }
+    }
+    textarea.medium {
+      &:focus {
+        outline: none;
+      }
+    }
+    div.validation_error {
+      padding: 0;
+      border: 0;
+      margin: 0;
+      margin-top: 1rem;
+      font-size: 14px;
+      text-align: left;
+    }
+    li.gfield.gfield_error {
+      background: none;
+      border: none;
+    }
+    .validation_message {
+      padding: 1px 0 !important;
+    }
+    li.gfield.gfield_error.gfield_contains_required {
+      margin: 0;
+    }
+    .gfield_error .gfield_label {
+      color: #FFF;
+    }
+  }
+  #gform_submit_button_1 {
+    &:focus {
+      outline: none;
+    }
+  }
+  input, textarea {
+    background: #FFF;
+    color: #3b7267
+  }
+}
+
+.gform_ajax_spinner {
+	margin-left: 20px;
+	border: 4px solid rgba(255, 255, 255, 0.3);
+	border-left: 4px solid#790000;
+	animation: spinner 1.1s infinite linear;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+}
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+//Subscribe Page MailChimp Form
+#mc_embed_signup {
+  .mc-field-group {
+    padding-bottom: 1rem;
+    p {
+      padding: 0;
+      margin: 0;
+    }
+    input {
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  #mc-embedded-subscribe-form div.mce_inline_error {
+    margin: 0;
+  }
+  div#mce-responses {
+    margin: 0;
+    padding: 0;
+  }
+  #mc-embedded-subscribe {
+    text-align: center;
+    left: 0;
+    right: 0;
+    background: #3b7267;
+    color: #fff;
+    width: 170px;
+    height: 36px;
+    border-radius: 5px;
+    &:hover {
+      background: #22554b;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

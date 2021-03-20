@@ -1,0 +1,27 @@
+body {
+	margin:0;
+	padding:0;
+	font-size:100%;
+}
+
+.slicknav_menu {
+	display:none;
+}
+
+#menu-desktop-menu-1{
+	display: none;
+}
+
+@media screen and (max-width: 767px) {
+	
+	
+     .slicknav_menu {
+		display:block;
+	}
+
+	.menu-desktop-menu-container{
+		display: none;
+	}
+}
+
+

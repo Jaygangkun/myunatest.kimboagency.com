@@ -1,0 +1,210 @@
+# Translation of Plugins - Custom Permalinks - Stable (latest release) in English (Canada)
+# This file is distributed under the same license as the Plugins - Custom Permalinks - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-06-06 05:34:05+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: en_CA\n"
+"Project-Id-Version: Plugins - Custom Permalinks - Stable (latest release)\n"
+
+#: custom-permalinks.php:127
+msgid "Custom Permalinks Manager"
+msgstr "Custom Permalinks Manager"
+
+#: admin/class-custom-permalinks-admin.php:572
+msgid ""
+"This plugin doesn't collect/store any user related information.\n"
+"\n"
+"      To have any kind of further query please feel free to\n"
+"      <a href=\"%s\" target=\"_blank\">contact us</a>."
+msgstr ""
+"This plugin doesn't collect/store any user related information.\n"
+"\n"
+"      To have any kind of further query please feel free to\n"
+"      <a href=\"%s\" target=\"_blank\">contact us</a>."
+
+#: admin/class-custom-permalinks-admin.php:549
+msgid "<a href=\"%s\" title=\"Contact\" target=\"_blank\">Contact</a>"
+msgstr "<a href=\"%s\" title=\"Contact\" target=\"_blank\">Contact</a>"
+
+#: admin/class-custom-permalinks-admin.php:523
+msgid "Custom Permalinks version %s by <a href=\"%s\" title=\"Sami Ahmed Siddiqui Company Website\" target=\"_blank\">Sami Ahmed Siddiqui</a> - <a href=\"%s\" title=\"Support forums\" target=\"_blank\">Support forums</a> - Follow on Twitter: <a href=\"%s\" title=\"Follow Sami Ahmed Siddiqui on Twitter\" target=\"_blank\">Sami Ahmed Siddiqui</a>"
+msgstr "Custom Permalinks version %s by <a href=\"%s\" title=\"Sami Ahmed Siddiqui Company Website\" target=\"_blank\">Sami Ahmed Siddiqui</a> - <a href=\"%s\" title=\"Support forums\" target=\"_blank\">Support forums</a> - Follow on Twitter: <a href=\"%s\" title=\"Follow Sami Ahmed Siddiqui on Twitter\" target=\"_blank\">Sami Ahmed Siddiqui</a>"
+
+#: admin/class-custom-permalinks-about.php:66
+msgid "More from Sami Ahmed Siddiqui"
+msgstr "More from Sami Ahmed Siddiqui"
+
+#: admin/class-custom-permalinks-about.php:56
+msgid "Thank you for choosing Custom Permalinks! We hope that your experience with our plugin for updating permalinks is quick and easy. We are trying to make it more feasible for you and provide capabilities in it."
+msgstr "Thank you for choosing Custom Permalinks! We hope that your experience with our plugin for updating permalinks is quick and easy. We are trying to make it more feasible for you and provide capabilities in it."
+
+#: admin/class-custom-permalinks-admin.php:545
+msgid "<a href=\"%s\" title=\"Premium Support\" target=\"_blank\">Premium Support</a>"
+msgstr "<a href=\"%s\" title=\"Premium Support\" target=\"_blank\">Premium Support</a>"
+
+#: admin/class-custom-permalinks-admin.php:541
+msgid "<a href=\"%s\" title=\"About\">About</a>"
+msgstr "<a href=\"%s\" title=\"About\">About</a>"
+
+#: admin/class-custom-permalinks-about.php:143
+msgid "Media Post Permalink"
+msgstr "Media Post Permalink"
+
+#: admin/class-custom-permalinks-about.php:134
+msgid "It removes some meta data from the wordpress header so, your header keeps clean of useless information like <strong>shortlink</strong>, <strong>rsd_link</strong>, <strong>wlwmanifest_link</strong>, <strong>emoji_scripts</strong>, <strong>wp_embed</strong>, <strong>wp_json</strong>, <strong>emoji_styles</strong>, <strong>generator</strong> and so on."
+msgstr "It removes some meta data from the wordpress header so, your header keeps clean of useless information like <strong>shortlink</strong>, <strong>rsd_link</strong>, <strong>wlwmanifest_link</strong>, <strong>emoji_scripts</strong>, <strong>wp_embed</strong>, <strong>wp_json</strong>, <strong>emoji_styles</strong>, <strong>generator</strong> and so on."
+
+#: admin/class-custom-permalinks-about.php:133
+msgid "Remove Links and Scripts"
+msgstr "Remove Links and Scripts"
+
+#: admin/class-custom-permalinks-about.php:124
+msgid "Simply the easiest solution to add valid schema.org as a JSON script in the head of posts and pages. It provides you multiple <strong>SCHEMA</strong> types like Article, News Article, Organization and Website Schema."
+msgstr "Simply the easiest solution to add valid schema.org as a JSON script in the head of posts and pages. It provides you multiple <strong>SCHEMA</strong> types like Article, News Article, Organization and Website Schema."
+
+#: admin/class-custom-permalinks-about.php:123
+msgid "JSON Structuring Markup"
+msgstr "JSON Structuring Markup"
+
+#: admin/class-custom-permalinks-about.php:113
+msgid "Make Paths Relative"
+msgstr "Make Paths Relative"
+
+#: admin/class-custom-permalinks-about.php:104
+msgid "Simply the easiest solution to add valid schema.org as a JSON script in the head of blog posts or articles. You can choose the schema either to show with the type of Article or NewsArticle from the settings page."
+msgstr "Simply the easiest solution to add valid schema.org as a JSON script in the head of blog posts or articles. You can choose the schema either to show with the type of Article or NewsArticle from the settings page."
+
+#: admin/class-custom-permalinks-about.php:103
+msgid "SCHEMA for Article"
+msgstr "SCHEMA for Article"
+
+#: admin/class-custom-permalinks-about.php:93
+msgid "Http Auth"
+msgstr "Http Auth"
+
+#: admin/class-custom-permalinks-about.php:83
+msgid "Permalinks Customizer"
+msgstr "Permalinks Customizer"
+
+#: admin/class-custom-permalinks-about.php:73
+msgid "Prevent XSS Vulnerability"
+msgstr "Prevent XSS Vulnerability"
+
+#: admin/class-custom-permalinks-about.php:57
+msgid "To support future development and help to make it even better just leaving us a <a href=\"%s\" title=\"Custom Permalinks Rating\" target=\"_blank\">%s</a> rating with a nice message to me :)"
+msgstr "To support future development and help to make it even better just leaving us a <a href=\"%s\" title=\"Custom Permalinks Rating\" target=\"_blank\">%s</a> rating with a nice message to me :)"
+
+#: admin/class-custom-permalinks-about.php:27
+msgid "Check it out"
+msgstr "Check it out"
+
+#: admin/class-custom-permalinks-about.php:114
+msgid "Convert the paths(URLs) to relative instead of absolute. You can make <strong>Post</strong>, <strong>Category</strong>, <strong>Archive</strong>, <strong>Image</strong> URLs and <strong>Script</strong> and <strong>Style</strong> src as per your requirement. You can choose which you want to be relative from the settings Page."
+msgstr "Convert the paths(URLs) to relative instead of absolute. You can make <strong>Post</strong>, <strong>Category</strong>, <strong>Archive</strong>, <strong>Image</strong> URLs and <strong>Script</strong> and <strong>Style</strong> src as per your requirement. You can choose which you want to be relative from the settings Page."
+
+#: admin/class-custom-permalinks-about.php:144
+msgid "On uploading  any image,  let's say services.png, WordPress creates the <strong>attachment post</strong> with the permalink of <strong>/services/</strong> and doesn't allow you to use that permalink to point your page. In this case, we come up with this great solution."
+msgstr "On uploading  any image,  let's say services.png, WordPress creates the <strong>attachment post</strong> with the permalink of <strong>/services/</strong> and doesn't allow you to use that permalink to point your page. In this case, we come up with this great solution."
+
+#: admin/class-custom-permalinks-about.php:94
+msgid "Allows you apply <strong>HTTP Auth</strong> on your site. You can apply Http Authentication all over the site or only the admin pages. It helps to stop crawling on your site while on development or persist the <strong>Brute Attacks</strong> by locking the Admin Pages."
+msgstr "Allows you apply <strong>HTTP Auth</strong> on your site. You can apply Http Authentication all over the site or only the admin pages. It helps to stop crawling on your site while on development or persist the <strong>Brute Attacks</strong> by locking the Admin Pages."
+
+#: admin/class-custom-permalinks-about.php:84
+msgid "Allows you to either define different Permalink Structure or define same Permalink Structure for default and Custom PostTypes, Taxonomies. The plugin automatically creates the user-friendly URLs as per your defined structure that can be edited from the single post/page."
+msgstr "Allows you to either define different Permalink Structure or define same Permalink Structure for default and Custom PostTypes, Taxonomies. The plugin automatically creates the user-friendly URLs as per your defined structure that can be edited from the single post/page."
+
+#: admin/class-custom-permalinks-about.php:74
+msgid "Secure your site from the <strong>XSS Attacks</strong> so, your users won't lose any kind of information or not redirected to any other site by visiting your site with the <strong>malicious code</strong> in the URL or so. In this way, users can open their site URLs without any hesitation."
+msgstr "Secure your site from the <strong>XSS Attacks</strong> so, your users won't lose any kind of information or not redirected to any other site by visiting your site with the <strong>malicious code</strong> in the URL or so. In this way, users can open their site URLs without any hesitation."
+
+#: admin/class-custom-permalinks-about.php:67
+msgid "Our List of Plugins provides the services which help you to manage your site URLs(Permalinks), Prevent your site from XSS Attacks, Brute force attacks, increase your site visitors by adding Structured JSON Markup and so on."
+msgstr "Our List of Plugins provides the services which help you to manage your site URLs(Permalinks), Prevent your site from XSS Attacks, Brute force attacks, increase your site visitors by adding Structured JSON Markup and so on."
+
+#. Author URI of the plugin
+msgid "https://www.custompermalinks.com/"
+msgstr "https://www.custompermalinks.com/"
+
+#. Author of the plugin
+msgid "Sami Ahmed Siddiqui"
+msgstr "Sami Ahmed Siddiqui"
+
+#. Description of the plugin
+msgid "Set custom permalinks on a per-post basis"
+msgstr "Set custom permalinks on a per-post basis"
+
+#. Plugin Name of the plugin
+#: admin/class-custom-permalinks-about.php:26
+msgid "Custom Permalinks"
+msgstr "Custom Permalinks"
+
+#: frontend/class-custom-permalinks-form.php:392
+msgid "Leave blank to disable"
+msgstr "Leave blank to disable"
+
+#: frontend/class-custom-permalinks-form.php:274
+#: frontend/class-custom-permalinks-form.php:301
+#: frontend/class-custom-permalinks-form.php:366
+msgid "Custom Permalink"
+msgstr "Custom Permalink"
+
+#: frontend/class-custom-permalinks-form.php:189
+msgid "Permalink:"
+msgstr "Permalink:"
+
+#: frontend/class-custom-permalinks-form.php:177
+#: frontend/class-custom-permalinks-form.php:235
+msgid "View Page"
+msgstr "View Page"
+
+#: admin/class-custom-permalinks-admin.php:266
+msgid "Category/Tags Permalinks"
+msgstr "Category/Tags Permalinks"
+
+#: frontend/class-custom-permalinks-form.php:83
+#: admin/class-custom-permalinks-admin.php:227
+#: admin/class-custom-permalinks-admin.php:421
+msgid "Permalink"
+msgstr "Permalink"
+
+#: admin/class-custom-permalinks-admin.php:226
+#: admin/class-custom-permalinks-admin.php:420
+msgid "Type"
+msgstr "Type"
+
+#: admin/class-custom-permalinks-admin.php:224
+#: admin/class-custom-permalinks-admin.php:419
+msgid "Title"
+msgstr "Title"
+
+#: admin/class-custom-permalinks-admin.php:125
+#: admin/class-custom-permalinks-admin.php:198
+#: admin/class-custom-permalinks-admin.php:293
+#: admin/class-custom-permalinks-admin.php:383
+msgid "Delete Permalinks"
+msgstr "Delete Permalinks"
+
+#: admin/class-custom-permalinks-admin.php:124
+#: admin/class-custom-permalinks-admin.php:197
+#: admin/class-custom-permalinks-admin.php:292
+#: admin/class-custom-permalinks-admin.php:382
+msgid "Bulk Actions"
+msgstr "Bulk Actions"
+
+#: admin/class-custom-permalinks-admin.php:75
+msgid "PostTypes Permalinks"
+msgstr "PostTypes Permalinks"
+
+#: admin/class-custom-permalinks-admin.php:70
+msgid "There is some error to proceed your request. Please retry with your request or contact to the plugin author."
+msgstr "There is some error to proceed your request. Please retry with your request or contact to the plugin author."
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/custom-permalinks/"
+msgstr "https://en-ca.wordpress.org/plugins/custom-permalinks/"

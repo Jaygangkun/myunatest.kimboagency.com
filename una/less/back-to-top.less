@@ -1,0 +1,40 @@
+.back_top_animated_arrow {
+  display: none !important;
+  text-align: center;
+  letter-spacing: 0px;
+  color: @white;
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+  background: @darkGreen;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 999;
+  display: none;
+  box-shadow: 0px 3px 9px rgba(0,0,0,0.29);
+  span, i{
+    display: block;
+    transition: opacity 180ms linear;
+  }
+  i{
+    opacity: 0.3;
+    font-size: 36px;
+  }
+  span{
+    font-size: 12px;
+    opacity: 0.7;
+  }
+  &:hover{
+    color: @white;
+    text-decoration: none;
+    i, span{
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    display: none !important;
+  }
+
+}
