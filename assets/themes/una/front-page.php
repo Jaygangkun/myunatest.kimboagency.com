@@ -55,8 +55,25 @@
  
 </div><!-- .section-wrapper -->
 
+<style type="text/css">
+   .loading #featured_programs_lazyload_waiting{
+      display: block;
+   }
 
-<?php include('includes/featured-programs.php'); ?>
+   #featured_programs_lazyload_waiting{
+      display: none;
+      text-align: center;
+      padding-bottom: 35px;
+   }
+</style>
+<div id="featured_programs_lazyload" class="loading">
+   <div id="featured_programs_lazyload_content">
+      <?php include('includes/featured-programs.php'); ?>
+   </div>
+   <div id="featured_programs_lazyload_waiting">
+      <img src="<?php echo get_site_url()?>/assets/addons/loading-page/loading-screens/logo/images/08.svg" style="cursor:pointer;width:60px;">
+   </div>
+</div>
 
 <?php include('includes/all-events-calendar.php'); ?>
 

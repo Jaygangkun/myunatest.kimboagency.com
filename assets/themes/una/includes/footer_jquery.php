@@ -401,7 +401,27 @@ $('#grid-button').click(function() {
 
 
   $(window).on('load', function() {
-	$(".slides").delay(2000).fadeIn(1);
+    $.ajax({
+      url: '<?php echo get_site_url()?>/assets/themes/una/includes/featured-programs-lazyload.php',
+      type: 'get',
+      success: function(resp){
+        $('#featured_programs_lazyload_content').html(resp);
+        $('.events-section .flexslider').flexslider({
+          // slideshowSpeed:	3000,
+          animation: 'slide',
+          itemWidth: 349,
+          itemMargin: 32,
+          touch: true,
+          slideshow: true,
+          minItems: 1,
+          maxItems: 3,
+        });
+        $('.flex-viewport').addClass('container');
+        $(".slides").delay(2000).fadeIn(1);
+
+        $('#featured_programs_lazyload').removeClass('loading');
+      }
+    })
 });
 
 var parallax = document.querySelectorAll(".parallax-hero");
