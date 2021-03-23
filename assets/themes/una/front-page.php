@@ -66,7 +66,7 @@
       padding-bottom: 35px;
    }
 </style>
-<div id="featured_programs_lazyload" class="loading">
+<div id="featured_programs_lazyload" class="loading front-page">
    <div id="featured_programs_lazyload_content">
       <?php include('includes/featured-programs.php'); ?>
    </div>

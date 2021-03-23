@@ -89,7 +89,8 @@ $(document).ready(function() {
 
   <?php /**************************** END Scroll to Top ************************************/ ?>
 
-  var $carousel = $('.main-carousel').flickity({
+  function initProgramPage(){
+    var $carousel = $('.main-carousel').flickity({
     cellAlign: 'left',
     contain: true,
     imagesLoaded: true,
@@ -374,14 +375,14 @@ $(window).scroll(function() {
 //INFINITE SCROLLING ON PROGRAMS PAGE
 
 //TOGGLE BW LIST AND GRID VIEW
-$('#list-button').click(function() {
+$(document).on('click', '#list-button', function() {
   $('.filtered-programs-section ul.filtered-programs-list-container').addClass('display');
   $('.main-carousel.filtered-programs-container').addClass('hide');
   $(this).css('border-bottom-color', '#e9e980');
   $(this).siblings().css('border-bottom-color', '#418477');
 });
 
-$('#grid-button').click(function() {
+$(document).on('click', '#grid-button', function() {
   var numberedItems = $('.is-filtered').length;
   $('.filtered-programs-section ul.filtered-programs-list-container').removeClass('display');
   $('.main-carousel.filtered-programs-container').removeClass('hide');
@@ -392,7 +393,7 @@ $('#grid-button').click(function() {
   $(this).siblings().css('border-bottom-color', '#418477');
 });
 //TOGGLE BW LIST AND GRID VIEW
-
+  }
 
 
 
@@ -401,27 +402,56 @@ $('#grid-button').click(function() {
 
 
   $(window).on('load', function() {
-    $.ajax({
-      url: '<?php echo get_site_url()?>/assets/themes/una/includes/featured-programs-lazyload.php',
-      type: 'get',
-      success: function(resp){
-        $('#featured_programs_lazyload_content').html(resp);
-        $('.events-section .flexslider').flexslider({
-          // slideshowSpeed:	3000,
-          animation: 'slide',
-          itemWidth: 349,
-          itemMargin: 32,
-          touch: true,
-          slideshow: true,
-          minItems: 1,
-          maxItems: 3,
-        });
-        $('.flex-viewport').addClass('container');
-        $(".slides").delay(2000).fadeIn(1);
 
-        $('#featured_programs_lazyload').removeClass('loading');
-      }
-    })
+    if($('.front-page').length > 0){
+      $.ajax({
+        url: '<?php echo get_site_url()?>/assets/themes/una/includes/featured-programs-lazyload.php',
+        type: 'get',
+        success: function(resp){
+          $('#featured_programs_lazyload_content').html(resp);
+          $('.events-section .flexslider').flexslider({
+            // slideshowSpeed:	3000,
+            animation: 'slide',
+            itemWidth: 349,
+            itemMargin: 32,
+            touch: true,
+            slideshow: true,
+            minItems: 1,
+            maxItems: 3,
+          });
+          $('.flex-viewport').addClass('container');
+          $(".slides").delay(2000).fadeIn(1);
+
+          $('#featured_programs_lazyload').removeClass('loading');
+        }
+      })
+    }
+
+    if($('.programs-page').length > 0){
+      $.ajax({
+        url: '<?php echo get_site_url()?>/assets/themes/una/includes/all-activities-lazyload.php',
+        type: 'get',
+        success: function(resp){
+          $('#activities_content_wrap').html(resp);
+          $('.events-section .flexslider').flexslider({
+            // slideshowSpeed:	3000,
+            animation: 'slide',
+            itemWidth: 349,
+            itemMargin: 32,
+            touch: true,
+            slideshow: true,
+            minItems: 1,
+            maxItems: 3,
+          });
+          $('.flex-viewport').addClass('container');
+          $(".slides").delay(2000).fadeIn(1);
+
+          $('#activities_content').removeClass('loading');
+          initProgramPage();
+        }
+      })
+    }
+    
 });
 
 var parallax = document.querySelectorAll(".parallax-hero");
