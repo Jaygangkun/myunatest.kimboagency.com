@@ -183,7 +183,7 @@
 
 <script>
   // Accepts any class name
-  var rellax = new Rellax('.rellax');
+  //var rellax = new Rellax('.rellax');
 </script>
 
 
@@ -211,7 +211,7 @@
 <?php include('includes/footer-jquery2.php'); ?>
 
 <!-- Start of myuna Zendesk Widget script -->
-<!--<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6da259b0-48fe-474c-8483-d4d2e581393c"> </script>-->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6da259b0-48fe-474c-8483-d4d2e581393c"> </script>
 <!-- End of myuna Zendesk Widget script -->
 
 </body>

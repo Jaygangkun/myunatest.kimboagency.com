@@ -27,7 +27,7 @@ if( $the_query->have_posts() ): ?>
 
             <?php $defaultURL = get_site_url() . "/assets/media/custom_images/una-default-image.png"; ?>
            <?php if (has_post_thumbnail( $post->ID ) ): ?>
-           	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
+           	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' ); ?>
                <a href="<?php echo get_permalink();?>"><div class="calendar-image" style="background-image: url('<?php echo $image[0]; ?>')"></div></a>
                <?php else: ?>
                   <a href="<?php echo get_permalink();?>"><div class="calendar-image" style="background-image: url('<?php custom_url(); ?>/images/UNA-default-img.png');"></div></a>

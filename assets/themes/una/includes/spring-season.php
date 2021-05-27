@@ -118,6 +118,10 @@ foreach ($final_array_for_spring as $key => $x) {
   $out[$sub]['ProgramDates'][] = date('M d', strtotime(mb_strimwidth( $text= $x['StartTime'],  0, 19)));
   $out[$sub]['RegistrationEndDate'][] = date('Y-m-d', strtotime(mb_strimwidth( $text= $x['RegistrationEndDate'],  0, 19)));
   $out[$sub]['RegistrationStartDateOriginal'][] = date('Y-m-d', strtotime(mb_strimwidth( $text= $x['RegistrationStartDate'],  0, 19)));
+  
+
+  
+
 
   $out[$sub]['Subject'] = $x['Subject'];
   $out[$sub]['ImageOriginal'] = $x['Image'];
@@ -241,7 +245,7 @@ foreach($modifiedSpringPrograms as $v)
     <?php $i=0;
 foreach($springPrograms as $element) {
    //check the property of every element
-     if($element['CalendarCategory'] == 'Indoor Bookings' || $element['CalendarCategory'] == 'Parking' || $element['CalendarName'] == 'UNA Community Field' || $element['EventStatus'] == 3 || $element['CalendarCategory'] == 'Fitness Centre Access' || $element['CalendarName'] == 'Sport Bookings' || $element['Subject'] == 'One-on-One Virtual Computer Help' ){
+     if($element['CalendarCategory'] == 'Indoor Bookings' || $element['CalendarCategory'] == 'Parking' || $element['CalendarName'] == 'UNA Community Field' || $element['EventStatus'] == 3 || $element['CalendarCategory'] == 'Fitness Centre Access' || $element['CalendarName'] == 'Sport Bookings' || $element['Subject'] == 'One-on-One Virtual Computer Help'){
       unset($springPrograms[$i]);
    }
    $i++;

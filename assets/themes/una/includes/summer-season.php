@@ -212,11 +212,12 @@ foreach($modifiedSummerPrograms as $v)
     <?php $i=0;
 foreach($summerPrograms as $element) {
    //check the property of every element
-     if($element['CalendarCategory'] == 'Indoor Bookings' || $element['CalendarCategory'] == 'Parking' || $element['CalendarName'] == 'UNA Community Field' || $element['EventStatus'] == 3 || $element['CalendarCategory'] == 'Fitness Centre Access' || $element['CalendarName'] == 'Sport Bookings' ){
+     if($element['CalendarCategory'] == 'Indoor Bookings' || $element['CalendarCategory'] == 'Parking' || $element['CalendarName'] == 'UNA Community Field' || $element['EventStatus'] == 3 || $element['CalendarCategory'] == 'Fitness Centre Access' || $element['CalendarName'] == 'Sport Bookings'|| $element['Subject'] == 'One-on-One Virtual Computer Help' ){
       unset($summerPrograms[$i]);
    }
    $i++;
 } ?>
+
 
 
 

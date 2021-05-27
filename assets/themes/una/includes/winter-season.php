@@ -44,7 +44,6 @@ curl_close($handle);
 
 
 
-
 <?php
 $winter_start = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . $winterStart . '&endDate=' . $winterTwoMonths . '&pageSize=2000';
 
@@ -79,7 +78,7 @@ $winter_start = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDat
 <?php
 
 
-$winter_end = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . $winterTwoMonths . '&endDate=' . $winterEnding . '&pageSize=2000';
+$winter_end = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . $winterTwoMonths . '&endDate=' . $winterEnding . '&pageSize=1000';
 
 
 
@@ -141,9 +140,7 @@ $final_winter = array_values($out); ?>
 <!--end of section 1-->
 
 
-<!-- start to get the data for all calendar events-->
 
-<!-- the first one is final, the second one is data, merge them and add values from second to first one-->
 
 <?php $arr2 = array_column($calendar, "ID");
 
@@ -209,4 +206,15 @@ foreach($modifiedWinterPrograms as $v)
     {
         $v['Season'] = 'Winter';
         $winterPrograms[] = $v;
-    }; ?>
+    }; ?>
+    
+    <?php $i=0;
+foreach($winterPrograms as $element) {
+   //check the property of every element
+     if($element['CalendarCategory'] == 'Indoor Bookings' || $element['CalendarCategory'] == 'Parking' || $element['CalendarName'] == 'UNA Community Field' || $element['EventStatus'] == 3 || $element['CalendarCategory'] == 'Fitness Centre Access' || $element['CalendarName'] == 'Sport Bookings' || $element['Subject'] == 'One-on-One Virtual Computer Help'){
+      unset($winterPrograms[$i]);
+   }
+   $i++;
+} ?>
+    
+  

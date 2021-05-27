@@ -9,7 +9,7 @@
 
 <!-- to test Facility Hours -->
 
-<?php include('includes/facility-hours-test.php'); ?>
+<?php //include('includes/facility-hours-test.php'); ?>
 
 
 
@@ -77,6 +77,7 @@
 
 <?php include('includes/all-events-calendar.php'); ?>
 
-<?php include('includes/top-section.php'); ?>
+<?php include('includes/core-standard.php'); ?>
+
 
 <?php get_footer(); ?>

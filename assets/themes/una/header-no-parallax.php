@@ -12,9 +12,10 @@
 </script>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="format-detection" content="telephone=no">
+      
       <meta name="robots" content="noindex">
 
-      <meta name="format-detection" content="telephone=no">
       <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
       <link rel="icon" href="<?php custom_url(); ?>/images/favicon.ico" type="image/png" />
       <!-- Begin Mailchimp Signup Form -->

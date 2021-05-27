@@ -25,9 +25,8 @@ if( $the_query->have_posts() ): ?>
         <div class="activities-loop events-loop event-column all-events">
 
 <div class="news-item frontpage-card three-card-news">
-    
-    
-<?php
+
+                  <?php
 $image = get_field('news_image');
 if( $image ){
 
@@ -50,7 +49,6 @@ if( $image ){
                       <?php } ?>
    
 
-                    
                     <div class="events-content">
 
                     <div class="news-date">

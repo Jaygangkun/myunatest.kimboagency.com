@@ -4,6 +4,7 @@
 $(document).ready(function() {
 
 
+
   <?php /**************************** Alerts ************************************/ ?>
 
     // Vars
@@ -89,6 +90,8 @@ $(document).ready(function() {
 
   $(window).on('load', function() {
 	$(".slides").delay(2000).fadeIn(1);
+	
+	    console.log("form submitted");
 });
 
 var parallax = document.querySelectorAll(".parallax-hero");
@@ -340,5 +343,7 @@ $('.top_want_menu a').first().attr('target', '_blank');
 
 
 });
+
+
 </script>
 

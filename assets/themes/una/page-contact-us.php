@@ -8,9 +8,8 @@
 
 <?php include('includes/contact-form.php'); ?>
 
-<?php include('includes/two-pillars.php'); ?>
+<?php include('includes/core-standard.php'); ?>
 
-<?php include('includes/staff-directory.php'); ?>
 
 <?php include('includes/helpful.php'); ?>
 

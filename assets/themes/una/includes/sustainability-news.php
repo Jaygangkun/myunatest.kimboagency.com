@@ -28,14 +28,24 @@ if( $the_query->have_posts() ): ?>
 
 <div class="news-item frontpage-card three-card-news">
 
-                    <?php if( get_field('news_image')) { ?>
-                     <?php $imageID = get_the_ID(); ?>
-                      <?php  $postID = get_the_ID(); ?>
+   <?php
+$image = get_field('news_image');
+if( $image ){
 
-                       <?php
+    // Image variables.
+    $url = $image['url'];
+    $title = $image['title'];
+    $alt = $image['alt'];
+    $caption = $image['caption'];
 
-                          $image = get_field('news_image');?>
-                          <a href="<?php echo get_permalink();?>"><div class="post_image" style="background-image: url('<?php echo esc_url($image); ?>'); background-position: center center ; "></div></a>
+    // Thumbnail size attributes.
+    $size = 'thumbnail';
+    $thumb = $image['sizes'][ $size ];
+    $width = $image['sizes'][ $size . '-width' ];
+    $height = $image['sizes'][ $size . '-height' ]; ?>
+
+
+ <a href="<?php echo get_permalink();?>"><div class="post_image" style="background-image: url('<?php echo $thumb;  ?>'); background-position: center center ; "></div></a>
                       <?php } else { ?>
                         <a href="<?php echo get_permalink();?>"><div class="post_image" style="background-image: url('<?php custom_url(); ?>/images/UNA-default-img.png'); background-position: center center ; "></div></a>
                       <?php } ?>

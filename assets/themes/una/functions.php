@@ -617,3 +617,4 @@ function slugify($text)
 
   return $text;
 }
+

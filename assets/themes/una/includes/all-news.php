@@ -30,7 +30,7 @@
                            <div class="row news_content single-search-result post_each">
  <div class="col-lg-3">
 
-      <?php
+           <?php
 $image = get_field('news_image');
 if( $image ){
 
@@ -50,7 +50,7 @@ if( $image ){
  <a href="<?php echo get_permalink();?>"><div class="calendar-image" style="background-image: url('<?php echo $thumb;  ?>'); background-position: center center ; "></div></a>
                       <?php } else { ?>
                         <a href="<?php echo get_permalink();?>"><div class="calendar-image" style="background-image: url('<?php custom_url(); ?>/images/UNA-default-img.png'); background-position: center center ; "></div></a>
-                      <?php } ?>
+                      <?php } ?> 
 </div>
 
 <div class="col-12 col-lg-3">

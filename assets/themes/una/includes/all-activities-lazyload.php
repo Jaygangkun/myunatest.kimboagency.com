@@ -180,11 +180,6 @@
 ?>
 
 
-
-
-
-
-
 <!-- Filter -->
 
 <div class="programs-filter">
@@ -192,11 +187,17 @@
   <div class="container">
 
     <div class="row">
+        
+        
+        
+      
+
+<p><input type="text" id="quicksearch" placeholder="Search" /></p>
 
       <div class="col-12 programs-filter-title">
 
         <h2>Our Programs</h2>
-
+        
         <p><strong>Filter</strong> Programs to focus on your interests</p>
 
       </div>

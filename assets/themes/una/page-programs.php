@@ -6,6 +6,7 @@
 
 <?php include('includes/left-overlay-columns.php'); ?>
 
+
 <div class="events-section">
 <div class="activities-time-loop sixty">
     <style type="text/css">
@@ -29,7 +30,7 @@
 </div>
 </div>
 
-<?php include('includes/bottom-section.php'); ?>
+<?php include('includes/core-standard.php'); ?>
 
 <?php include('includes/helpful.php'); ?>
 

@@ -20,7 +20,7 @@
          </div>
     </div><!--col-12-->
     
-    <?php
+      <?php
 $image = get_field('news_image');
 if( $image ){
 
@@ -41,21 +41,9 @@ if( $image ){
         
          <img src="<?php custom_url(); ?>/images/UNA-default-img.png" alt="UNA-default" />
                         
-                        
-                        
+    
                       <?php } ?>
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
 </div>
 
 <div class="container">

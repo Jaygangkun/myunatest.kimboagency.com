@@ -52,11 +52,13 @@
 
 ?>
 
+
+
 <li class="carousel-cell program <?php echo $dayClasses . " " .$differentCategories . " " .$seasons . " " .$groupCapacity . " " .$classSpace . " " .$classLocation . " " .$lowerProgram; ?>">
   <div class="activities-loop event-column">
     <div class="frontpage-card">
 
-       <?php $defaultURL = get_site_url() . "/assets/media/custom_images/una-default-image.png"; ?>
+      <?php $defaultURL = get_site_url() . "/assets/media/custom_images/una-default-image.png"; ?>
       <?php if( $brandNewArray[$i]['ImageOriginal'] ): ?>
         <div class="post_image" style="background-image: url('<?php echo $brandNewArray[$i]['ImageOriginal']; ?>');"></div>
       <?php else: ?>
@@ -234,6 +236,35 @@
 
         </div><!-- .registration -->
         </div><!-- details and registration wrapper-->
+      
+      
+      <!-- when daylight saving starts make adjustment -->
+        
+
+
+<?php //Get the current timestamp.
+$currentTime = time();
+
+//The number of hours that you want
+//to subtract from the date and time.
+$hoursToSubtract = 7;
+
+//Convert those hours into seconds so
+//that we can subtract them from our timestamp.
+$timeToSubtract = ($hoursToSubtract * 60 * 60);
+
+//Subtract the hours from our Unix timestamp.
+$timeInPast = $currentTime - $timeToSubtract;
+
+//Print it out in a human-readable format.
+$timeRegister = date("Hi", $timeInPast); ?>
+
+
+
+
+                       
+
+
         <?php if($dateTime < $brandNewArray[$i]['RegistrationStartDateOriginal'][0] && $brandNewArray[$i]['Remaining'] > 0   ){ ?>
         <div class="button-wrapper-for-program-loop">
         <?php $eventID = $brandNewArray[$i]['ID']; ?>
@@ -241,7 +272,21 @@
           <button class="register-button" id="button <?php echo $i; ?>">Register on <?php echo date("M d", strtotime( $brandNewArray[$i]['RegistrationStartDateOriginal'][0])) ;?></button>
         </a>
         </div>
-        <?php } elseif($dateTime >= $brandNewArray[$i]['RegistrationStartDateOriginal'][0] && $brandNewArray[$i]['Remaining'] > 0 ){ ?>
+        <?php } elseif($dateTime == $brandNewArray[$i]['RegistrationStartDateOriginal'][0] && $brandNewArray[$i]['Remaining'] > 0 && $timeRegister < 1200 ){ ?>
+        <div class="button-wrapper-for-program-loop">
+        <?php $eventID = $brandNewArray[$i]['ID']; ?>
+          <a target="_blank" rel="noopener noreferrer" href="https://myuna.perfectmind.com/SocialSite/BookMe4LandingPages/CoursesLandingPage?courseId=<?php echo $brandNewArray[$i]['ID']; ?>">
+          <button class="register-button" id="button <?php echo $i; ?>">Register at 12PM</button>
+        </a>
+        </div>
+        <?php } elseif($dateTime == $brandNewArray[$i]['RegistrationStartDateOriginal'][0] && $brandNewArray[$i]['Remaining'] > 0 && $timeRegister >= 1200 ){ ?>
+        <div class="button-wrapper-for-program-loop">
+        <?php $eventID = $brandNewArray[$i]['ID']; ?>
+          <a target="_blank" rel="noopener noreferrer" href="https://myuna.perfectmind.com/SocialSite/BookMe4LandingPages/CoursesLandingPage?courseId=<?php echo $brandNewArray[$i]['ID']; ?>">
+          <button class="register-button" id="button <?php echo $i; ?>">Register Now</button>
+        </a>
+        </div>
+        <?php } elseif($dateTime > $brandNewArray[$i]['RegistrationStartDateOriginal'][0] && $brandNewArray[$i]['Remaining'] > 0 ){ ?>
         <div class="button-wrapper-for-program-loop">
         <?php $eventID = $brandNewArray[$i]['ID']; ?>
           <a target="_blank" rel="noopener noreferrer" href="https://myuna.perfectmind.com/SocialSite/BookMe4LandingPages/CoursesLandingPage?courseId=<?php echo $brandNewArray[$i]['ID']; ?>">
@@ -269,14 +314,28 @@
           <button class="register-button" id="button <?php echo $i; ?>">Register on <?php echo date("M d", strtotime( $brandNewArray[$i]['RegistrationStartDateOriginal'][0])) ;?></button>
         </a>
         </div>
-        <?php } elseif ($dateTime >= $brandNewArray[$i]['RegistrationStartDateOriginal'][0] && $brandNewArray[$i]['Remaining'] == null && $brandNewArray[$i]['WaitListCapacity'] == null ){ ?>
+        <?php } elseif ($dateTime == $brandNewArray[$i]['RegistrationStartDateOriginal'][0] && $brandNewArray[$i]['Remaining'] == null && $brandNewArray[$i]['WaitListCapacity'] == null && $timeRegister < 1200  ){ ?>
+        <div class="button-wrapper-for-program-loop">
+        <?php $eventID = $brandNewArray[$i]['ID']; ?>
+          <a target="_blank" rel="noopener noreferrer" href="https://myuna.perfectmind.com/SocialSite/BookMe4LandingPages/CoursesLandingPage?courseId=<?php echo $brandNewArray[$i]['ID']; ?>">
+          <button class="register-button" id="button <?php echo $i; ?>">Register at 12PM</button>
+        </a>
+        </div>
+        <?php } elseif ($dateTime == $brandNewArray[$i]['RegistrationStartDateOriginal'][0] && $brandNewArray[$i]['Remaining'] == null && $brandNewArray[$i]['WaitListCapacity'] == null && $timeRegister >= 1200  ){ ?>
         <div class="button-wrapper-for-program-loop">
         <?php $eventID = $brandNewArray[$i]['ID']; ?>
           <a target="_blank" rel="noopener noreferrer" href="https://myuna.perfectmind.com/SocialSite/BookMe4LandingPages/CoursesLandingPage?courseId=<?php echo $brandNewArray[$i]['ID']; ?>">
           <button class="register-button" id="button <?php echo $i; ?>">Register Now</button>
         </a>
         </div>
-        <?php } ?>
+        <?php }elseif ($dateTime > $brandNewArray[$i]['RegistrationStartDateOriginal'][0] && $brandNewArray[$i]['Remaining'] == null && $brandNewArray[$i]['WaitListCapacity'] == null){ ?>
+        <div class="button-wrapper-for-program-loop">
+        <?php $eventID = $brandNewArray[$i]['ID']; ?>
+          <a target="_blank" rel="noopener noreferrer" href="https://myuna.perfectmind.com/SocialSite/BookMe4LandingPages/CoursesLandingPage?courseId=<?php echo $brandNewArray[$i]['ID']; ?>">
+          <button class="register-button" id="button <?php echo $i; ?>">Register Now</button>
+        </a>
+        </div>
+        <?php }?>
       </div><!-- .events.content -->
 
     </div><!-- .frontpage-card -->

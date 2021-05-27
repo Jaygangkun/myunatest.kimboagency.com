@@ -1,3 +1,4 @@
+
 <!--API FOR LOCATION-->
 <?php 
 $data;
@@ -76,6 +77,7 @@ $final = array_values($out); ?>
 
 
 
+
 <div class="operation-hours-section">
    <h2 class="frontpage-section-headline dashboard-section">Our Facilities</h2>
    <div class="container">
@@ -83,130 +85,41 @@ $final = array_values($out); ?>
          <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="operation-hours-card">
                <div class="top-section">
-
-               <!--Wesbrook Community-->
                <a class="button-link" href="<?php custom_url(); ?>/our-facilities/#single-facility-2">
                   <h3 class="name"><?php echo $data[1]['Name']; ?></h3>  
                </a>
                   <h4 class="category">Community Centre</h4>
-                  <?php include('wesbrook-community.php'); ?>
-
+              
+                  <div class="facilities-hours-info"><i class="fa fa-clock-o" aria-hidden="true"></i>
+Closed Due to COVID-19</div>
                </div>
                <h4 class="category">Fitness Centre</h4>
-               <div class="all-facilities-hours">
-           
-
-           <?php $monStartTime = date('h:i A', strtotime($final[0]['StartTime'])); ?>
-           <?php $monEndTime = date('h:i A', strtotime($final[0]['EndTime'])); ?>
-
-           <?php $friStartTime = date('h:i A', strtotime($final[1]['StartTime'])); ?>
-           <?php $friEndTime = date('h:i A', strtotime($final[1]['EndTime'])); ?>
-
-           <?php $satStartTime = date('h:i A', strtotime($final[2]['StartTime'])); ?>
-           <?php $satEndTime = date('h:i A', strtotime($final[2]['EndTime'])); ?>
-</div>
-
-
-<!-- Determine if centre is opening or close-->   
-
-
-<?php
-
-$times = array(
-'sun' => $satStartTime . ' - ' . $satEndTime,
-'mon' => $monStartTime . ' - ' . $monEndTime,
-'tue' => $monStartTime . ' - ' . $monEndTime,
-'wed' => $monStartTime . ' - ' . $monEndTime,
-'thu' => $monStartTime . ' - ' . $monEndTime,
-'fri' => $friStartTime . ' - ' . $friEndTime,
-'sat' => $satStartTime . ' - ' . $satEndTime
-); ?>
-
-
-<?php function compileHours($times, $timestamp) {
-$times = $times[strtolower(date('D',$timestamp))];
-if(!strpos($times, '-')) return array();
-$hours = explode(",", $times);
-$hours = array_map('explode', array_pad(array(),count($hours),'-'), $hours);
-$hours = array_map('array_map', array_pad(array(),count($hours),'strtotime'), $hours, array_pad(array(),count($hours),array_pad(array(),2,$timestamp)));
-end($hours);
-if ($hours[key($hours)][0] > $hours[key($hours)][1]) $hours[key($hours)][1] = strtotime('+1 day', $hours[key($hours)][1]);
-return $hours;
-};
-
-
-//Function to Calculate Time Until Closing
-
-
-
-
-function isOpen($now, $times) {
-$open = 0; // time until closing in seconds or 0 if closed
-// merge opening hours of today and the day before
-$hours = array_merge(compileHours($times, strtotime('yesterday',$now)),compileHours($times, $now)); 
-
-foreach ($hours as $h) {
-   if ($now >= $h[0] and $now < $h[1]) {
-       $open = $h[1] - $now;
-       return $open;
-   } 
-}
-return $open;
-}
-
-
-$dt = new DateTime();
-$tz = new DateTimeZone('America/Vancouver'); // or whatever zone you're after
-$dt->setTimezone($tz);
-$now = strtotime($dt->format('h:i A')); 
-
-//Function to Calculate Time Until Closing
-$open = isOpen($now, $times); ?>
-
-
-<?php
-$monStart = date('H:i', strtotime($final[0]['StartTime'])); 
-$monEnd = date('H:i', strtotime($final[0]['EndTime'])); 
-$friStart = date('H:i', strtotime($final[1]['StartTime'])); 
-$friEnd = date('H:i', strtotime($final[1]['EndTime'])); 
-$satStart = date('H:i', strtotime($final[2]['StartTime'])); 
-$satEnd = date('H:i', strtotime($final[2]['EndTime'])); 
-$timeNow = date('H:i');
-
-
-
-
-if(!empty($final)) {
-include('wesbrook-fitness.php'); }
-else{ ?>
-   <div class="facilities-hours-info closing-info regular"><i class="fa fa-clock-o" aria-hidden="true"></i>
-      Closed until further notice
-  </div>
-<?php }
-?>
-               
+               <div class="facilities-hours-info regular"><i class="fa fa-clock-o" aria-hidden="true"></i>
+               Mon, Sun: <?php echo date('h:i A', strtotime($final[2]['StartTime'])); ?> - <?php echo date('h:i A', strtotime($final[2]['EndTime'])); ?>
+                </div>
+                <div class="facilities-hours-info regular"><i class="fa fa-clock-o" aria-hidden="true"></i>
+               Tue - Fri: <?php echo date('h:i A', strtotime($final[0]['StartTime'])); ?> - <?php echo date('h:i A', strtotime($final[0]['EndTime'])); ?>
+                </div>
+                <div class="facilities-hours-info regular"><i class="fa fa-clock-o" aria-hidden="true"></i>
+               Sat: <?php echo date('h:i A', strtotime($final[1]['StartTime'])); ?> - <?php echo date('h:i A', strtotime($final[1]['EndTime'])); ?>
+                </div>
             </div>
          </div>
          <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="operation-hours-card">
                <div class="top-section">
                <a class="button-link" href="<?php custom_url(); ?>/our-facilities/#single-facility-3">
+
                   <h3 class="name"><?php echo $data[0]['Name']; ?></h3>
-               </a>
-               <h4 class="category">Community Centre</h4>
+</a>
+                  <h4 class="category">Community Centre</h4>
 
-
-               <!--OLD Barn HOURS-->
-
-               <?php include('old-barn-open.php'); ?>
-               
-              
-               <!--end for OLD BARN -->
+                  <div class="facilities-hours-info"><i class="fa fa-clock-o" aria-hidden="true"></i>
+Closed Due to COVID-19</div>              
                 </div>
-                 <h4 class="category">Fitness Centre</h4>
-
-               
-                              <?php include('old-barn-fitness.php'); ?>
+                <h4 class="category">Fitness Centre</h4>
+               <div class="facilities-hours-info"><i class="fa fa-clock-o" aria-hidden="true"></i>
+Closed Due to COVID-19</div>
             </div>
          </div>
          <div class="col-lg-4 col-md-4 col-sm-12">
@@ -214,14 +127,14 @@ else{ ?>
                <div class="top-section">
                <a class="button-link" href="<?php custom_url(); ?>/our-facilities/#single-facility-1">
 
-                  <h3 class="name">UNA Services</h3>
+                  <h3 class="name"><?php echo $data[3]['Name']; ?></h3>
 </a>
                   <h4 class="category">Main Office</h4>
-                  <?php include('main-office-open.php'); ?>
-               </div>
-                                 <h4 class="category">Green Depot</h4>
-                  <?php include('green-depot-open.php'); ?>
 
+                  <div class="facilities-hours-info"><i class="fa fa-clock-o" aria-hidden="true"></i>
+Closed Due to COVID-19</div> 
+
+               </div>
             </div>
          </div>
       </div>

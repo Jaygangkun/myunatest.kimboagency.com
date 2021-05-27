@@ -141,9 +141,7 @@ $final_fall = array_values($out); ?>
 <!--end of section 1-->
 
 
-<!-- start to get the data for all calendar events-->
 
-<!-- the first one is final, the second one is data, merge them and add values from second to first one-->
 
 <?php $arr2 = array_column($calendar, "ID");
 
@@ -214,7 +212,7 @@ foreach($modifiedFallPrograms as $v)
 <?php $i=0;
 foreach($fallPrograms as $element) {
    //check the property of every element
-     if($element['CalendarCategory'] == 'Indoor Bookings' || $element['CalendarCategory'] == 'Parking' || $element['CalendarName'] == 'UNA Community Field' || $element['EventStatus'] == 3){
+     if($element['CalendarCategory'] == 'Indoor Bookings' || $element['CalendarCategory'] == 'Parking' || $element['CalendarName'] == 'UNA Community Field' || $element['EventStatus'] == 3 ){
       unset($fallPrograms[$i]);
    }
    $i++;
