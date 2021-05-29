@@ -179,7 +179,15 @@
 
 ?>
 
+<!-- Save data into file -->
+<?php
 
+// $data_file_path = 'data';
+// $file = fopen($data_file_path, 'w');
+// fwrite($file, json_encode($brandNewArray));
+// fclose($file);
+
+?>
 <!-- Filter -->
 
 <div class="programs-filter">
@@ -438,21 +446,20 @@
 
   <!-- Flickity View -->
 
-  <ul class="main-carousel filtered-programs-container">
-
-    <?php for ($i=0; $i < count($brandNewArray); $i++): ?>
-
-      <?php include('single-activities-in-loop.php'); ?>
-
-    <?php endfor; ?>
-
+  <div class="main-carousel-wrap" style="position: relative;">
     <div class="number-results">
-
-      <p><?php echo count($brandNewArray); ?></p>
-
+      <p><?php echo count($brandNewArray); ?> Results</p>
     </div>
+    <ul class="main-carousel filtered-programs-container">
 
-  </ul>
+      <?php for ($i=0; $i < count($brandNewArray); $i++): ?>
+
+        <?php include('single-activities-in-loop.php'); ?>
+
+      <?php endfor; ?>
+
+    </ul>
+  </div>
 
 
 

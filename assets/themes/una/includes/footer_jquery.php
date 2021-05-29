@@ -145,6 +145,15 @@ $(document).ready(function() {
 // quick search regex
 var qsRegex;
 var buttonFilter;
+var gridFilter = function(element){
+  var $this = $(this);
+  
+  var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+
+  var matchResult = this.matches(filterValueWithInclusives );
+  return searchResult && matchResult;
+  // return searchResult;
+};
 
 //Filter Code
 
@@ -177,12 +186,7 @@ var $grid = $('.filtered-programs-container').isotope({
   itemSelector: '.program',
  layoutMode: 'none',
       transitionDuration: 0,
-  filter: function() {
-    var $this = $(this);
-    var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
-
-    return searchResult;
-  }
+  // filter: gridFilter
 });
 
  $grid.on( 'layoutComplete',
@@ -202,12 +206,50 @@ var $grid = $('.filtered-programs-container').isotope({
 // use value of search field to filter
 var $quicksearch = $('#quicksearch').keyup( debounce( function() {
   qsRegex = new RegExp( $quicksearch.val(), 'gi' );
-  $grid.isotope();
+  // $grid.isotope({filter: gridFilter});
+  getFilters($grid);
 }) );
 
+// set parameters from location url
+// '?season=' + seasonValue + '&age=' + ageValue + '&activity=' + activityValue + '&availability=' + availValue + '&location=' + locationValue + '&group=' + groupsValue + '&search=' + $('#quicksearch').val();
+const urlParams = new URLSearchParams(location.search);
+if(urlParams.get('season')){
+  $filterSeason.val(urlParams.get('season'));
+}
 
+if(urlParams.get('age')){
+  $filterAge.val(urlParams.get('age'));
+}
 
+if(urlParams.get('activity')){
+  $filterActivity.val(urlParams.get('activity'));
+}
 
+if(urlParams.get('availability')){
+  $filterAvail.val(urlParams.get('availability'));
+}
+
+if(urlParams.get('location')){
+  $filterLocation.val(urlParams.get('location'));
+}
+
+if(urlParams.get('group')){
+  $filterGroups.val(urlParams.get('group'));
+}
+
+if(urlParams.get('search')){
+  $('#quicksearch').val(urlParams.get('search'));
+  qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+}
+
+if(urlParams.get('days')){
+  var days = (urlParams.get('days')).split(',');
+  for(var dindex = 0; dindex < days.length; dindex++){
+    $('[value="' + days[dindex] + '"]').prop( "checked", true );
+  }
+}
+
+getFilters($grid);
 // debounce so filtering doesn't happen every millisecond
 function debounce( fn, threshold ) {
   var timeout;
@@ -358,17 +400,29 @@ function debounce( fn, threshold ) {
           filterValueWithInclusives = filterValue;
         }
   
-      // console.log(filterValueWithInclusives);
   
-   $grid.isotope({ filter: filterValueWithInclusives });
+        // make new location url
+        seasonValue = $filterSeason.val(),
+          ageValue = $filterAge.val(),
+          activityValue = $filterActivity.val(),
+          availValue = $filterAvail.val(),
+          locationValue = $filterLocation.val(),
+          groupsValue = $filterGroups.val();
+        var new_url = location.protocol + '//' + location.hostname + location.pathname + '?season=' + seasonValue + '&age=' + ageValue + '&activity=' + activityValue + '&availability=' + availValue + '&location=' + locationValue + '&group=' + groupsValue + '&search=' + $('#quicksearch').val() + '&days=' + inclusives.join(',');
+        // console.log('new_url:', new_url);
+        history.pushState(null, '', new_url);
+
+  //  $grid.isotope({ filter: filterValueWithInclusives });
+        $grid.isotope({filter: gridFilter});
     
 
       $('.program').removeClass('is-filtered');
       $('.program:visible').addClass('is-filtered');
-      $('.number-results').remove();
+      // $('.number-results').remove();
       var numItems = $('.is-filtered').length/2;
       if ( numItems != 0) {
-        $('.filtered-programs-container').append('<div class="number-results"><p>' + numItems + ' Results</p></div>');
+        // $('.filtered-programs-container').append('<div class="number-results"><p>' + numItems + ' Results</p></div>');
+        $('.number-results').html('<p>' + numItems + ' Results</p>')
       }
   
       // Hide list items to reset infinite scrolling
