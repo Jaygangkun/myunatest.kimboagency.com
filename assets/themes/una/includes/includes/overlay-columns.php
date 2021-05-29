@@ -23,16 +23,14 @@
 
                    <?php if( get_field('overlay_image_button_link') ) { ?>
 
-                        <a class="button" target="_blank" rel="noopener noreferrer" href="<?php the_field('overlay_image_button_link'); ?>"><?php the_field('overlay_image_button_label'); ?></a>
+                        <a target="_blank" class="button" rel="noopener noreferrer" href="<?php the_field('overlay_image_button_link'); ?>"><?php the_field('overlay_image_button_label'); ?></a>
 
                     <?php } ?>
 
                    <?php } else{ ?>
 
                     <?php if( get_field('overlay_image_button_link') ) { ?>
-
-                        <a class="button" target="_blank" rel="noopener noreferrer" href="<?php the_field('overlay_image_button_link'); ?>"><?php the_field('overlay_image_button_label'); ?></a>
-
+                        <a class="button" href="<?php the_field('overlay_image_button_link'); ?>"><?php the_field('overlay_image_button_label'); ?></a>
                     <?php } ?>
 
                    <?php } ?>
