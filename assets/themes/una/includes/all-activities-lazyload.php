@@ -200,13 +200,15 @@
         
       
 
-<p><input type="text" id="quicksearch" placeholder="Search" /></p>
 
       <div class="col-12 programs-filter-title">
 
         <h2>Our Programs</h2>
+        <div>
+          <p><input type="text" id="quicksearch" placeholder="Search" /></p>
+          <p><span style="cursor: pointer" id="btn_show_filter" status="hide">Show Filter</span></p>
+        </div>
         
-        <p><strong>Filter</strong> Programs to focus on your interests</p>
 
       </div>
 
@@ -214,7 +216,7 @@
 
 
 
-    <form action="#">
+    <form action="#" id="filter_form" style="display: none">
 
       <div class="row dropdowns">
 

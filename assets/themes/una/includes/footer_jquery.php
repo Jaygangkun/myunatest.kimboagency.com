@@ -533,7 +533,7 @@ $(document).on('click', '#grid-button', function() {
 
     if($('.programs-page').length > 0){
       $.ajax({
-        url: '<?php echo get_site_url()?>/assets/themes/una/includes/all-activities-lazyload.php',
+        url: '<?php echo get_site_url()?>/assets/themes/una/includes/all-activities-lazyload.php?v=' + new Date().getTime(),
         type: 'get',
         success: function(resp){
           $('#activities_content_wrap').html(resp);
@@ -825,5 +825,21 @@ $('.top_want_menu a').first().attr('target', '_blank');
 
 
 });
+
+$(document).on('click', '#btn_show_filter', function(){
+  
+  if($(this).attr('status') == 'hide'){
+    $('#filter_form').show();
+
+    $(this).attr('status', 'show');
+    $(this).html('Hide Filter');
+  }
+  else{
+    $('#filter_form').hide();
+
+    $(this).attr('status', 'hide');
+    $(this).html('Show Filter');
+  }
+})
 </script>
 

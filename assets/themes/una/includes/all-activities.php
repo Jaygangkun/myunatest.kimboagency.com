@@ -9,8 +9,11 @@
       <div class="col-12 programs-filter-title">
 
         <h2>Our Programs</h2>
-
-        <p><strong>Filter</strong> Programs to focus on your interests</p>
+        <div>
+          <p><input type="text" id="quicksearch" placeholder="Search" /></p>
+          <p><span style="cursor: pointer" id="btn_show_filter" status="hide">Show Filter</span></p>
+        </div>
+        
 
       </div>
 
