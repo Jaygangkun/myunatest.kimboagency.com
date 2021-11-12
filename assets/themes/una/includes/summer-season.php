@@ -45,7 +45,7 @@ $summerEnding = date("Y-m-d", strtotime($data2[1]['SeasonStartDate'] . '+ 90 day
 
 
 <?php
-$summer_start = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . $summerStart . '&endDate=' . $summerTwoMonths . '&pageSize=2000';
+$summer_start = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . $summerStart . '&endDate=' . $summerTwoMonths . '&pageSize=3000';
 
 
 
@@ -78,7 +78,7 @@ $summer_start = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDat
 <?php
 
 
-$summer_end = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . $summerTwoMonths . '&endDate=' . $summerEnding . '&pageSize=2000';
+$summer_end = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . $summerTwoMonths . '&endDate=' . $summerEnding . '&pageSize=3000';
 
 
 
@@ -212,7 +212,7 @@ foreach($modifiedSummerPrograms as $v)
     <?php $i=0;
 foreach($summerPrograms as $element) {
    //check the property of every element
-     if($element['CalendarCategory'] == 'Indoor Bookings' || $element['CalendarCategory'] == 'Parking' || $element['CalendarName'] == 'UNA Community Field' || $element['EventStatus'] == 3 || $element['CalendarCategory'] == 'Fitness Centre Access' || $element['CalendarName'] == 'Sport Bookings'|| $element['Subject'] == 'One-on-One Virtual Computer Help' ){
+     if( $element['OnlineDisplayDate'] ==  '2021-08-06T19:00:00' || $element['CalendarCategory'] == 'Indoor Bookings' || $element['CalendarCategory'] == 'Parking' || $element['CalendarName'] == 'UNA Community Field' || $element['EventStatus'] == 3 || $element['CalendarCategory'] == 'Fitness Centre Access' || $element['CalendarName'] == 'Sport Bookings'|| $element['Subject'] == 'One-on-One Virtual Computer Help' || $element['CourseID'] == '1750' || $element['CalendarName'] == 'Parks'|| $element['CalendarName'] == 'Outdoor Bookings'|| $element['CalendarName'] == 'Sports Fields'|| $element['CalendarName'] == 'Volunteer' ){
       unset($summerPrograms[$i]);
    }
    $i++;

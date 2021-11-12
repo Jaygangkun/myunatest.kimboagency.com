@@ -6,29 +6,41 @@
 
 <?php include('includes/spring-season.php') ?>
 <?php include('includes/summer-season.php') ?>
-<?php include('includes/winter-season.php') ?>
+<?php include('includes/fall-season.php') ?>
+<?php //include('includes/winter-season.php') ?>
 
-<?php $gmtNow = date('Y-m-d H:i:s'); ?>
+<?php $gmtNow = date('Y-m-d H:i:s'); 
+?>
 
 
 
 
-<?php $springStart = '2021-03-29 08:00:00'; ?>
+
+<?php $fallStart = '2021-09-01 07:00:00'; ?>
 
 <?php $summerStart = '2021-06-28 08:00:00'; ?>
 
-<?php $displayTime = '2021-03-05 08:00:00'; ?>
+<?php $fallDisplayTime = '2021-08-06 19:00:00'; ?>
 
 
-<?php if ($gmtNow >= $displayTime && $gmtNow >= $springStart  && $gmtNow < $summerStart) { ?>
-   <?php $springAndSummer= array_merge( $springPrograms, $summerPrograms); ?>
-<?php } elseif ( $gmtNow >= $displayTime && $gmtNow >= $summerStart){ ?>
+
+
+
+<?php if ($gmtNow >= $fallDisplayTime && $gmtNow >= $summerStart  && $gmtNow < $fallStart) { ?>
+
+   <?php $springAndSummer= array_merge( $fallPrograms, $summerPrograms); ?>
+
+<?php } elseif ( $gmtNow >= $fallDisplayTime && $gmtNow >= $fallStart){ ?>
+
+  <?php $springAndSummer= array_merge( $fallPrograms); ?>
+
+<?php } elseif( $gmtNow < $fallDisplayTime) { ?>
+
   <?php $springAndSummer= array_merge( $summerPrograms); ?>
-  <?php } elseif ( $gmtNow >= $displayTime && $gmtNow < $springStart){ ?>
-  <?php $springAndSummer= array_merge( $springPrograms, $summerPrograms, $winterPrograms); ?>
-<?php } elseif( $gmtNow < $displayTime) { ?>
-  <?php $springAndSummer= array_merge( $winterPrograms); ?>
+
 <?php }; ?>
+
+
 
 <?php $searchTerm = ucfirst(get_search_query());
 foreach ($springAndSummer as $rkey => $resource){
@@ -37,6 +49,7 @@ if ( preg_match("/$searchTerm/", $resource['InstructorName']) || preg_match("/$s
 }
 } ?>
 
+<?php //print_r($brandNewArray); ?>
 
 
 

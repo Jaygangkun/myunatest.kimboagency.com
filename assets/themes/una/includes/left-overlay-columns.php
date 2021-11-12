@@ -1,6 +1,3 @@
-7<?php if( get_field('left_overlay_image')) { ?>
-
-
 
 <div class="overlay-image left-overlay-image" style="background:#418477<?php if( get_field('left_overlay_image') ) {
        $left_overlay_image = wp_get_attachment_image_src( get_field('left_overlay_image'), 'large' );
@@ -48,5 +45,3 @@
       </div><!--//row-->
     </div><!--//container-->
 </div><!--//hero_image-->
-
-<?php } ?>

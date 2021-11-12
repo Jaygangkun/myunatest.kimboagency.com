@@ -6,7 +6,6 @@
 
 <?php include('includes/left-overlay-columns.php'); ?>
 
-
 <div class="events-section">
 <div class="activities-time-loop sixty">
     <style type="text/css">
@@ -24,7 +23,10 @@
             <?php include('includes/all-activities.php'); ?>
         </div>
         <div id="activities_content_lazy_waiting">
-            <img src="<?php echo get_site_url()?>/assets/addons/loading-page/loading-screens/logo/images/08.svg" style="cursor:pointer;width:60px;">
+            
+           
+    
+              <img src="<?php custom_url(); ?>/images/loading-screen.svg" style="cursor:pointer;width:60px;">
         </div>
     </div>
 </div>

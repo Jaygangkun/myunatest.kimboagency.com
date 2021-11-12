@@ -2,12 +2,10 @@
 
 <div class="footer" id="footer">
 
-<?php// if ( is_front_page() ){ ?>
     <a class="back_top_animated_arrow" href="#page-header">
       <span>TOP</span>
       <i class="far fa-arrow-alt-circle-up"></i>
     </a>
-  <?php// } ?>
 
     <div class="top_border"></div>
 	<div class="main_area">
@@ -183,7 +181,7 @@
 
 <script>
   // Accepts any class name
-  //var rellax = new Rellax('.rellax');
+  var rellax = new Rellax('.rellax');
 </script>
 
 

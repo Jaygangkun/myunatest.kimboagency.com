@@ -3,6 +3,9 @@
     
         <?php if( get_row_layout() == 'text_section' ): ?>
         
+         <?php if(get_sub_field('grey_background') ) { ?>
+        
+        <div class="section"  style="background: #EFEEED">
         <div class="container">
             <div class="row">
              <div class="col-lg-10 offset-lg-1 top-section-content">
@@ -53,6 +56,62 @@
             </div>
         </div>
         
+        </div>
+        
+                <?php } else { ?>
+                
+                 <div class="container">
+            <div class="row">
+             <div class="col-lg-10 offset-lg-1 top-section-content">
+                 <div class="main_text"><?php the_sub_field('text_area'); ?></div>
+                 
+
+                 
+                 
+        <?php if( get_sub_field('text_section_link_external') == TRUE && get_sub_field('text_section_button_alignment') == 'left' ) { ?>
+
+
+        <?php if( get_sub_field('text_section_link') && get_sub_field('text_section_link_label') ) { ?>
+            <div class="centre-button-container" style="justify-content: left; padding-left: 0;">
+              <a class="button" target="_blank" rel="noopener noreferrer" href="<?php the_sub_field('text_section_link'); ?>"><?php the_sub_field('text_section_link_label'); ?></a>
+            </div>
+        <?php } ?>
+
+        <?php } elseif ( get_sub_field('text_section_link_external') == TRUE && get_sub_field('text_section_button_alignment') == 'center' ){ ?>
+        
+        <?php if( get_sub_field('text_section_link') && get_sub_field('text_section_link_label') ) { ?>
+            <div class="centre-button-container">
+              <a class="button" target="_blank" rel="noopener noreferrer" href="<?php the_sub_field('text_section_link'); ?>"><?php the_sub_field('text_section_link_label'); ?></a>
+            </div>
+         <?php } ?>
+
+        <?php } elseif ( get_sub_field('text_section_link_external') == FALSE && get_sub_field('text_section_button_alignment') == 'center' ) { ?>
+
+            <?php if( get_sub_field('text_section_link') && get_sub_field('text_section_link_label') ) { ?>
+            <div class="centre-button-container">
+
+              <a class="button" href="<?php the_sub_field('text_section_link'); ?>"><?php the_sub_field('text_section_link_label'); ?></a>
+                 </div>
+             <?php } ?>
+
+        <?php } elseif( get_sub_field('text_section_link_external') == FALSE && get_sub_field('text_section_button_alignment') == 'left') { ?>
+          <?php if( get_sub_field('text_section_link') && get_sub_field('text_section_link_label') ) { ?>
+            <div class="centre-button-container" style="justify-content: left; padding-left: 0;">
+
+              <a class="button" href="<?php the_sub_field('text_section_link'); ?>"><?php the_sub_field('text_section_link_label'); ?></a>
+
+                 </div>
+            <?php } ?>
+         <?php } ?>
+
+            
+            
+            </div>            
+            </div>
+        </div>
+                
+                 <?php } ?>
+                
         
     <?php elseif( get_row_layout() == 'gravity_form_section' ): ?>
 
@@ -152,7 +211,7 @@ if( have_rows('staff_member') ): ?>
    
 
 
-    <div class="top_pillars_area">
+    <div class="top_pillars_area two-pillars">
 
     <div class="container">
 
@@ -469,7 +528,7 @@ if( have_rows('staff_member') ): ?>
 
 <!--list of titles-->
 <div class="collaboration-container">
-<
+
 
 
 <?php if( have_rows('two_columns') ): ?>
@@ -540,11 +599,34 @@ if( have_rows('staff_member') ): ?>
 
 <?php elseif( get_row_layout() == 'second_tabs_with_images_section' ): ?>
 
+<?php if(get_sub_field("tabs_title")) {  ?>
+
+<div class="container">
+     <div class="row">
+         
+             <?php
+      $covideUpdatesTitle = get_sub_field("tabs_title");
+      $covideUpdatesSubtitle = get_sub_field("tabs_subtitle");
+    ?>
+
+<?php if(get_sub_field("tabs_title")) {  ?>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 center">
+          <?php if($covideUpdatesTitle) : ?><h2 style="padding-top: 2rem; "><?php echo $covideUpdatesTitle; ?></h2><?php endif; ?>
+          <?php if($covideUpdatesSubtitle) : ?><h3><?php echo $covideUpdatesSubtitle; ?></h3><?php endif; ?>
+        </div>
+      </div>
+    </div>
+<?php }; ?> 
+
+<?php }; ?> 
+
+
 
 
 <?php if( have_rows('tabs_with_images') ): ?>
-<div class="container">
-     <div class="row">
+
         <ul class="col-12 tab-list">
             <?php  $z = 1; ?> 
 
@@ -662,10 +744,33 @@ while ( have_rows('tabs_with_images') ) : the_row(); ?>
 
 
  <?php elseif( get_row_layout() == 'tabs_with_images_section' ): ?>
+ 
+ <?php if(get_sub_field("tabs_title")) {  ?>
+
+  <?php
+      $covideUpdatesTitle = get_sub_field("tabs_title");
+      $covideUpdatesSubtitle = get_sub_field("tabs_subtitle");
+    ?>
+
+<?php if(get_sub_field("tabs_title")) {  ?>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 center">
+          <?php if($covideUpdatesTitle) : ?><h2 style="padding-top: 2rem;"><?php echo $covideUpdatesTitle; ?></h2><?php endif; ?>
+          <?php if($covideUpdatesSubtitle) : ?><h3><?php echo $covideUpdatesSubtitle; ?></h3><?php endif; ?>
+        </div>
+      </div>
+    </div>
+<?php }; ?> 
+
+<?php }; ?> 
+
 
 
 
 <?php if( have_rows('tabs_with_images') ): ?>
+
+   
 <div class="container">
      <div class="row">
         <ul class="col-12 tab-list">
@@ -1050,10 +1155,10 @@ while ( have_rows('sports_fields_content_repeater') ) : the_row(); ?>
     ?>
 
 <?php if(get_sub_field("tabs_title")) {  ?>
-    <div class="container covid-updates">
+    <div class="container">
       <div class="row">
         <div class="col-12 center">
-          <?php if($covideUpdatesTitle) : ?><h2><?php echo $covideUpdatesTitle; ?></h2><?php endif; ?>
+          <?php if($covideUpdatesTitle) : ?><h2 style="padding-top: 2rem; "><?php echo $covideUpdatesTitle; ?></h2><?php endif; ?>
           <?php if($covideUpdatesSubtitle) : ?><h3><?php echo $covideUpdatesSubtitle; ?></h3><?php endif; ?>
         </div>
       </div>
@@ -1123,10 +1228,10 @@ while ( have_rows('single_tab') ) : the_row(); ?>
     ?>
 
 <?php if(get_sub_field("tabs_title")) {  ?>
-    <div class="container covid-updates">
+    <div class="container">
       <div class="row">
         <div class="col-12 center">
-          <?php if($covideUpdatesTitle) : ?><h2><?php echo $covideUpdatesTitle; ?></h2><?php endif; ?>
+          <?php if($covideUpdatesTitle) : ?><h2 style="padding-top: 2rem; "><?php echo $covideUpdatesTitle; ?></h2><?php endif; ?>
           <?php if($covideUpdatesSubtitle) : ?><h3><?php echo $covideUpdatesSubtitle; ?></h3><?php endif; ?>
         </div>
       </div>
@@ -1164,14 +1269,10 @@ while ( have_rows('single_tab') ) : the_row(); ?>
 <div class="container paddingbox" id="tab_pdf_<?php echo $z; ?>">
     
 
-
- <?php if(get_sub_field('single_tab_title')){?>
-   <div class="center paddingbox single-page-section-title">
-    <h2><?php the_sub_field('single_tab_title'); ?></h2>
-  </div><!--end of title-->
-<?php }?>
-
   <?php if( have_rows('meeting_documents') ): ?>
+  <div class="container">
+       <div class="row">
+
               <?php while ( have_rows('meeting_documents') ) : the_row(); ?>
  <div class="col-lg-3 col-md-4 col-sm-12 d-flex">  
             <div class="single-meeting-document">
@@ -1200,15 +1301,16 @@ while ( have_rows('single_tab') ) : the_row(); ?>
 </div>
 
              <?php endwhile; ?>
+             </div>
+             </div>
         <?php endif; ?>
-    
-
-    
 </div><!--end of container-->
 
-<?php  $z++; ?> 
+<?php  $z++; ?>
+
 <?php endwhile; ?>
 </div>
+
 <?php endif; ?>
 
  <?php elseif( get_row_layout() == 'tabs_section_with_pdfs_no_sub_header' ): ?>
@@ -1219,10 +1321,10 @@ while ( have_rows('single_tab') ) : the_row(); ?>
     ?>
 
 <?php if(get_sub_field("tabs_title")) {  ?>
-    <div class="container covid-updates">
+    <div class="container">
       <div class="row">
         <div class="col-12 center">
-          <?php if($covideUpdatesTitle) : ?><h2><?php echo $covideUpdatesTitle; ?></h2><?php endif; ?>
+          <?php if($covideUpdatesTitle) : ?><h2 style="padding-top: 2rem; "><?php echo $covideUpdatesTitle; ?></h2><?php endif; ?>
           <?php if($covideUpdatesSubtitle) : ?><h3><?php echo $covideUpdatesSubtitle; ?></h3><?php endif; ?>
         </div>
       </div>
@@ -1329,10 +1431,10 @@ while ( have_rows('single_tab') ) : the_row(); ?>
 
                 <?php } ?>
 
-               <?php } else{ ?>
+               <?php } elseif ( get_sub_field('left_overlay_image_button_link_external') == FALSE ){ ?>
 
                 <?php if( get_sub_field('left_overlay_image_button_link') ) { ?>
-                  <a class="button" href="<?php the_sub_field('left_overlay_image_button_link'); ?>" rel="noopener noreferrer" ><?php the_sub_field('left_overlay_image_button_label'); ?></a>
+                  <a class="button" href="<?php the_sub_field('left_overlay_image_button_link'); ?>" ><?php the_sub_field('left_overlay_image_button_label'); ?></a>
                 <?php } ?>
 
                 <?php } ?>
@@ -1795,16 +1897,68 @@ while ( have_rows('report_archive') ) : the_row(); ?>
 
    <?php elseif( get_row_layout() == 'accordion_section' ): ?>
 
+    <?php if(get_sub_field('grey_background') ) { ?>
+
+
+<div class="parking-container faq" style="background: #EFEEED">
+  <div class="container">
+    <div class="row all-centers">
+      <div class="col-lg-10 offset-lg-1 col-md-12 col-sm-12">
+        <?php if(get_sub_field('faq_section_label') && get_sub_field('section_label_left_align')){ ?>
+          <div class="first-column-content parking-map-section" style="text-align: left;">
+            <h2 class="single-article-title"><?php the_sub_field('faq_section_label'); ?></h2>
+          </div>
+        <?php } elseif (get_sub_field('faq_section_label') && get_sub_field('section_label_left_align') == false ) { ?>
+        <div class="first-column-content parking-map-section">
+            <h2 class="single-article-title"><?php the_sub_field('faq_section_label'); ?></h2>
+          </div>
+          <?php } ?>
+        
+
+        <?php if( have_rows('faq_repeater') ): ?>
+          <ul class="green-depot-faq">
+            <?php  $z = 1; ?>
+              <?php while ( have_rows('faq_repeater') ) : the_row(); ?>
+              <li class="water-reduction-selector green-depot-question-<?php echo $z; ?>" style="background: #fff">
+                <div class="question">
+                    <div class="question-content">
+                  <?php if(get_sub_field('faq_question')){ ?>
+                    <?php the_sub_field('faq_question'); ?>
+                  <?php } ?>
+                  </div>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="answer">
+                  <?php if(get_sub_field('faq_answer')){ ?>
+                  <?php the_sub_field('faq_answer'); ?>
+                  <?php } ?>
+                </div>
+              </li>
+              <?php  $z++; ?>
+            <?php endwhile; ?>
+          </ul>
+        <?php endif; ?>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php } else{ ?>
 
 <div class="parking-container faq">
   <div class="container">
     <div class="row all-centers">
       <div class="col-lg-10 offset-lg-1 col-md-12 col-sm-12">
-        <?php if(get_sub_field('faq_section_label')){ ?>
-          <div class="first-column-content parking-map-section">
+        <?php if(get_sub_field('faq_section_label') && get_sub_field('section_label_left_align')){ ?>
+          <div class="first-column-content parking-map-section" style="text-align: left;">
             <h2 class="single-article-title"><?php the_sub_field('faq_section_label'); ?></h2>
           </div>
-        <?php } ?>
+        <?php } elseif (get_sub_field('faq_section_label') && get_sub_field('section_label_left_align') == false ) { ?>
+        <div class="first-column-content parking-map-section">
+            <h2 class="single-article-title"><?php the_sub_field('faq_section_label'); ?></h2>
+          </div>
+          <?php } ?>
+        
 
         <?php if( have_rows('faq_repeater') ): ?>
           <ul class="green-depot-faq">
@@ -1834,6 +1988,7 @@ while ( have_rows('report_archive') ) : the_row(); ?>
   </div>
 </div>
 
+<?php } ?>
 
 
 

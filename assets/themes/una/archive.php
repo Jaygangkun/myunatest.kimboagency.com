@@ -180,19 +180,33 @@
                            <div class="inner_wrap">
 
                            <div class="row news_content single-search-result post_each">
+                               
  <div class="col-lg-3">
 
-      <?php if( get_field('news_image')) { ?>
-        <?php $imageID = get_the_ID(); ?>
-        <?php  $postID = get_the_ID(); ?>
+           <?php
+$image = get_field('news_image');
+if( $image ){
 
-        <?php 
-          $image = get_field('news_image');?>
-          <a href="<?php echo get_permalink();?>"><div class="calendar-image" style="background-image: url('<?php echo esc_url($image); ?>'); background-position: center center ; "></div></a>
-        <?php } else { ?>
-          <a href="<?php echo get_permalink();?>"><div class="calendar-image" style="background-image: url('<?php custom_url(); ?>/images/UNA-default-img.png'); background-position: center center ; "></div></a>
-        <?php } ?>  
+    // Image variables.
+    $url = $image['url'];
+    $title = $image['title'];
+    $alt = $image['alt'];
+    $caption = $image['caption'];
+
+    // Thumbnail size attributes.
+    $size = 'thumbnail';
+    $thumb = $image['sizes'][ $size ];
+    $width = $image['sizes'][ $size . '-width' ];
+    $height = $image['sizes'][ $size . '-height' ]; ?>
+
+
+ <a href="<?php echo get_permalink();?>"><div class="calendar-image no-load" style="background-image: url('<?php echo $thumb;  ?>'); background-position: center center ; "></div></a>
+                      <?php } else { ?>
+                        <a href="<?php echo get_permalink();?>"><div class="calendar-image no-load" style="background-image: url('<?php custom_url(); ?>/images/UNA-default-img.png'); background-position: center center ; "></div></a>
+                      <?php } ?> 
 </div>
+
+ 
 
 <div class="col-12 col-lg-3">
          <a class="single-title" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php echo mb_strimwidth( $text= get_the_title(),  0, 58, '...'); ?></a>  

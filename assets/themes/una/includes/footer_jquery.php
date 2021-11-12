@@ -2,9 +2,6 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-    
-     
-
 
 
   <?php /**************************** Alerts ************************************/ ?>
@@ -90,24 +87,22 @@ $(document).ready(function() {
   })
 
   <?php /**************************** END Scroll to Top ************************************/ ?>
+  
+function initProgramPage(){
 
-  function initProgramPage(){
-    var $carousel = $('.main-carousel').flickity({
+
+  var $carousel = $('.main-carousel').flickity({
     cellAlign: 'left',
     contain: true,
     imagesLoaded: true,
     draggable: '>4',
     wrapAround: false,
+    imagesLoaded: true,
     pageDots: false,
-    percentPosition: true,
-    lazyLoad: true
-
+    percentPosition: true
   });
 
     <?php /**************************** Filtering Programs ************************************/ ?>
-    
-
-
 
   // This is here to allow us to use Isotope without Layoutmode - Do not delete
   Isotope.Item.prototype._create = function() {
@@ -140,9 +135,8 @@ $(document).ready(function() {
   Isotope.LayoutMode.create('none');
 
   // --------------- //
-
   
-// quick search regex
+  // quick search regex
 var qsRegex;
 var buttonFilter;
 var gridFilter = function(element){
@@ -155,55 +149,48 @@ var gridFilter = function(element){
   // return searchResult;
 };
 
-//Filter Code
-
   var filters = [],
-        inclusives = [],
-        inclusivesString = "",
-        filterValue = "",
-        filterValueWithInclusivesArray = [],
-        filterValueWithInclusives = "",
-        $checkboxes = $('.day-checks .weekday, .day-checks .weekend'),
-        $filterSeason = $('#filter-season'),
-        $filterAge = $('#filter-age'),
-        $filterGroups = $('#filter-groups'),
-        $filterActivity = $('#filter-activity'),
-        $filterAvail = $('#filter-space'),
-        $filterLocation = $('#filter-location'),
-        $slider = $('.events-section .filtered-programs-container'),
-        $weekdaysCheck = $('#weekdays'),
-        $weekdays = $('.weekday'),
-        $weekendsCheck = $('#weekends'),
-        $weekends = $('.weekend'),
-        $noPrograms = $('.no-programs');
+      inclusives = [],
+      inclusivesString = "",
+      filterValue = "",
+      filterValueWithInclusivesArray = [],
+      filterValueWithInclusives = "",
+      $checkboxes = $('.day-checks .weekday, .day-checks .weekend'),
+      $filterSeason = $('#filter-season'),
+      $filterAge = $('#filter-age'),
+      $filterGroups = $('#filter-groups'),
+      $filterActivity = $('#filter-activity'),
+      $filterAvail = $('#filter-space'),
+      $filterLocation = $('#filter-location'),
+      $slider = $('.events-section .filtered-programs-container'),
+      $weekdaysCheck = $('#weekdays'),
+      $weekdays = $('.weekday'),
+      $weekendsCheck = $('#weekends'),
+      $weekends = $('.weekend'),
+      $noPrograms = $('.no-programs');
 
+  // init Isotope
+  $noPrograms.hide();
 
-// init Isotope
+  var $grid = $('.filtered-programs-container').isotope({
+    itemSelector: '.program',
+    layoutMode: 'none',
+    transitionDuration: 0
+  });
 
-    $noPrograms.hide();
-
-var $grid = $('.filtered-programs-container').isotope({
-  itemSelector: '.program',
- layoutMode: 'none',
-      transitionDuration: 0,
-  // filter: gridFilter
-});
-
- $grid.on( 'layoutComplete',
-      function( event, laidOutItems ) {
-        if (laidOutItems.length <= 0 ) {
-          $noPrograms.show();
-          $('.filtered-programs-container').hide();
-        } else {
-          $noPrograms.hide();
-          $('.filtered-programs-container').show();
-        }
+  $grid.on( 'layoutComplete',
+    function( event, laidOutItems ) {
+      if (laidOutItems.length <= 0 ) {
+        $noPrograms.show();
+        $('.filtered-programs-container').hide();
+      } else {
+        $noPrograms.hide();
+        $('.filtered-programs-container').show();
       }
-    );
-
-
-
-// use value of search field to filter
+    }
+  );
+  
+  // use value of search field to filter
 var $quicksearch = $('#quicksearch').keyup( debounce( function() {
   qsRegex = new RegExp( $quicksearch.val(), 'gi' );
   // $grid.isotope({filter: gridFilter});
@@ -265,143 +252,145 @@ function debounce( fn, threshold ) {
   };
 }
 
-// bind Filter on season change
-    $filterSeason.on( 'change', function () {
-      getFilters($grid);
-    });
-  
-    // Filter Age Range
-    $filterAge.on( 'change', function() {
-      getFilters($grid);
-    });
-  
-    // Filter Activity
-    $filterActivity.on( 'change', function() {
-      getFilters($grid)
-    });
-  
-     // Filter Groups
-     $filterGroups.on( 'change', function() {
-      getFilters($grid)
-    });
-  
-    // Filter Availability
-     $filterAvail.on( 'change', function() {
-      getFilters($grid)
-    });
-  
-    // Filter Location
-     $filterLocation.on( 'change', function() {
-      getFilters($grid)
-    });
-  
-    // Combination Days
-    $checkboxes.change( function() {
-      getFilters($grid)
-    });
-  
-    // Weekdays
-    $weekdaysCheck.change( function() {
-      if(this.checked) {
-        $weekdays.prop( "checked", true );
-      } else {
-        $weekdays.prop( "checked", false );
+
+  // bind Filter on season change
+  $filterSeason.on( 'change', function () {
+    getFilters($grid);
+  });
+
+  // Filter Age Range
+  $filterAge.on( 'change', function() {
+    getFilters($grid);
+  });
+
+  // Filter Activity
+  $filterActivity.on( 'change', function() {
+    getFilters($grid)
+  });
+
+   // Filter Groups
+   $filterGroups.on( 'change', function() {
+    getFilters($grid)
+  });
+
+  // Filter Availability
+   $filterAvail.on( 'change', function() {
+    getFilters($grid)
+  });
+
+  // Filter Location
+   $filterLocation.on( 'change', function() {
+    getFilters($grid)
+  });
+
+  // Combination Days
+  $checkboxes.change( function() {
+    getFilters($grid)
+  });
+
+  // Weekdays
+  $weekdaysCheck.change( function() {
+    if(this.checked) {
+      $weekdays.prop( "checked", true );
+    } else {
+      $weekdays.prop( "checked", false );
+    }
+    getFilters($grid)
+  });
+
+  // Weekends
+  $weekendsCheck.change( function() {
+    if(this.checked) {
+      $weekends.prop( "checked", true );
+    } else {
+      $weekends.prop( "checked", false );
+    }
+    getFilters($grid)
+  });
+
+  function getFilters($grid) {
+    // Display/Reset all hidden list items
+    $('.filtered-programs-container li.is-filtered').show();
+
+    // Reset Filters + Inclusives
+    filters.splice(0, filters.length);
+    inclusives.splice(0, inclusives.length);
+    inclusivesString = "";
+    filterValue = "";
+    filterValueWithInclusivesArray.splice(0, filterValueWithInclusivesArray.length);
+    filterValueWithInclusives = "";
+
+    var seasonValue = $filterSeason.val(),
+        ageValue = $filterAge.val(),
+        activityValue = $filterActivity.val(),
+        availValue = $filterAvail.val(),
+        locationValue = $filterLocation.val(),
+        groupsValue = $filterGroups.val();
+
+    // Season Filter
+    if (seasonValue != "*" ) {
+      filters.push(seasonValue);
+    }
+
+    // Age Filter
+    if (ageValue != "*" ) {
+      filters.push(ageValue);
+    }
+
+    // Activity Filter
+    if (activityValue != "*" ) {
+      filters.push(activityValue);
+    }
+
+    // Groups Filter
+    if (groupsValue != "*" ) {
+      filters.push(groupsValue);
+    }
+
+    // Avail Filter
+    if (availValue != "*" ) {
+      filters.push(availValue);
+    }
+
+    // Location Filter
+    if (locationValue != "*" ) {
+      filters.push(locationValue);
+    }
+
+    // Grab Inclusive Filters (activity / season / etc)
+    filterValue = filters.length ? filters.join('') : '*';
+
+    // Days Filters
+    $checkboxes.each( function( i, elem ) {
+      if ( elem.checked ) {
+        inclusives.push( elem.value );
       }
-      getFilters($grid)
     });
-  
-    // Weekends
-    $weekendsCheck.change( function() {
-      if(this.checked) {
-        $weekends.prop( "checked", true );
-      } else {
-        $weekends.prop( "checked", false );
-      }
-      getFilters($grid)
-    });
-  
-    function getFilters($grid) {
-      // Display/Reset all hidden list items
-      $('.filtered-programs-container li.is-filtered').show();
-  
-      // Reset Filters + Inclusives
-      filters.splice(0, filters.length);
-      inclusives.splice(0, inclusives.length);
-      inclusivesString = "";
-      filterValue = "";
-      filterValueWithInclusivesArray.splice(0, filterValueWithInclusivesArray.length);
-      filterValueWithInclusives = "";
-  
-      var seasonValue = $filterSeason.val(),
-          ageValue = $filterAge.val(),
-          activityValue = $filterActivity.val(),
-          availValue = $filterAvail.val(),
-          locationValue = $filterLocation.val(),
-          groupsValue = $filterGroups.val();
-  
-      // Season Filter
-      if (seasonValue != "*" ) {
-        filters.push(seasonValue);
-      }
-  
-      // Age Filter
-      if (ageValue != "*" ) {
-        filters.push(ageValue);
-      }
-  
-      // Activity Filter
-      if (activityValue != "*" ) {
-        filters.push(activityValue);
-      }
-  
-      // Groups Filter
-      if (groupsValue != "*" ) {
-        filters.push(groupsValue);
-      }
-  
-      // Avail Filter
-      if (availValue != "*" ) {
-        filters.push(availValue);
-      }
-  
-      // Location Filter
-      if (locationValue != "*" ) {
-        filters.push(locationValue);
-      }
-  
-      // Grab Inclusive Filters (activity / season / etc)
-      filterValue = filters.length ? filters.join('') : '*';
-  
-      // Days Filters
-      $checkboxes.each( function( i, elem ) {
-        if ( elem.checked ) {
-          inclusives.push( elem.value );
-        }
-      });
-  
-      // If Days ticked
-        // Loop though all Days
-        // Add filterValue to that day if not *
-        // Join with comas
-        // Add Filter Value
-      // Else
-        // Fliter Value
-  
-        if (inclusives.length) {
-          for (var i = 0; i < inclusives.length; i++) {
-            if (filterValue == "*") {
-              filterValueWithInclusivesArray.push( inclusives[i]);
-            } else {
-              filterValueWithInclusivesArray.push( inclusives[i] + filterValue);
-            }
+
+    // If Days ticked
+      // Loop though all Days
+      // Add filterValue to that day if not *
+      // Join with comas
+      // Add Filter Value
+    // Else
+      // Fliter Value
+
+      if (inclusives.length) {
+        for (var i = 0; i < inclusives.length; i++) {
+          if (filterValue == "*") {
+            filterValueWithInclusivesArray.push( inclusives[i]);
+          } else {
+            filterValueWithInclusivesArray.push( inclusives[i] + filterValue);
           }
-          filterValueWithInclusives = filterValueWithInclusivesArray.join(', ');
-        } else {
-          filterValueWithInclusives = filterValue;
         }
-  
-  
-        // make new location url
+        filterValueWithInclusives = filterValueWithInclusivesArray.join(', ');
+      } else {
+        filterValueWithInclusives = filterValue;
+      }
+
+    // console.log(filterValueWithInclusives);
+
+     // make new location url
         seasonValue = $filterSeason.val(),
           ageValue = $filterAge.val(),
           activityValue = $filterActivity.val(),
@@ -416,39 +405,44 @@ function debounce( fn, threshold ) {
         $grid.isotope({filter: gridFilter});
     
 
-      $('.program').removeClass('is-filtered');
-      $('.program:visible').addClass('is-filtered');
-      // $('.number-results').remove();
+    $('.program').removeClass('is-filtered');
+    $('.program:visible').addClass('is-filtered');
+ // $('.number-results').remove();
       var numItems = $('.is-filtered').length/2;
       if ( numItems != 0) {
         // $('.filtered-programs-container').append('<div class="number-results"><p>' + numItems + ' Results</p></div>');
         $('.number-results').html('<p>' + numItems + ' Results</p>')
       }
-  
-      // Hide list items to reset infinite scrolling
-      $('.filtered-programs-list-container li.is-filtered').slice(5).hide();
-      maxcount = 6;
-  
-      //here
-      var isFlickity = true;
-      if ( isFlickity ) {
-        $carousel.flickity('destroy')
-        $('.main-carousel').flickity({
-          cellSelector: '.carousel-cell.is-filtered',
-          cellAlign: 'left',
-          contain: true,
-          imagesLoaded: true,
-          draggable: '>4',
-          wrapAround: false,
-          pageDots: false,
-          percentPosition: true,
-          resize: true
-        });
-      }
-      isFlickity = !isFlickity;
-  
-  
+
+    // Hide list items to reset infinite scrolling
+    $('.filtered-programs-list-container li.is-filtered').slice(5).hide();
+    maxcount = 6;
+
+    //here
+    var isFlickity = true;
+    if ( isFlickity ) {
+      $carousel.flickity('destroy')
+      $('.main-carousel').flickity({
+        cellSelector: '.carousel-cell.is-filtered',
+        cellAlign: 'left',
+        contain: true,
+        imagesLoaded: true,
+        draggable: '>4',
+        wrapAround: false,
+        pageDots: false,
+        percentPosition: true,
+        resize: true
+      });
     }
+    isFlickity = !isFlickity;
+
+
+  }
+
+
+  $filterSeason.val('.fall').trigger('change');
+
+  $("option[value='.fitness-centre-access']").remove();
 
 <?php /**************************** END Filtering Programs ************************************/ ?>
 
@@ -469,14 +463,14 @@ $(window).scroll(function() {
 //INFINITE SCROLLING ON PROGRAMS PAGE
 
 //TOGGLE BW LIST AND GRID VIEW
-$(document).on('click', '#list-button', function() {
+$('#list-button').click(function() {
   $('.filtered-programs-section ul.filtered-programs-list-container').addClass('display');
   $('.main-carousel.filtered-programs-container').addClass('hide');
   $(this).css('border-bottom-color', '#e9e980');
   $(this).siblings().css('border-bottom-color', '#418477');
 });
 
-$(document).on('click', '#grid-button', function() {
+$('#grid-button').click(function() {
   var numberedItems = $('.is-filtered').length;
   $('.filtered-programs-section ul.filtered-programs-list-container').removeClass('display');
   $('.main-carousel.filtered-programs-container').removeClass('hide');
@@ -487,7 +481,7 @@ $(document).on('click', '#grid-button', function() {
   $(this).siblings().css('border-bottom-color', '#418477');
 });
 //TOGGLE BW LIST AND GRID VIEW
-    $(document).on('click', '.selector', function() {
+  $(document).on('click', '.selector', function() {
   $(this).css('border-bottom-color', '#e9e980');
         $(this).siblings().css('border-bottom-color', '#418477');
         var target = $(this).attr('rel');
@@ -496,16 +490,17 @@ $(document).on('click', '#grid-button', function() {
         $("."+target).show().siblings("div").hide();
 
 });
+
   }
+
+
 
 
 
 
 <?php /**************************** SEARCH BAR ************************************/ ?>
 
-
-  $(window).on('load', function() {
-    
+$(window).on('load', function() {
 
     if($('.front-page').length > 0){
       $.ajax({
@@ -527,13 +522,23 @@ $(document).on('click', '#grid-button', function() {
           $(".slides").delay(2000).fadeIn(1);
 
           $('#featured_programs_lazyload').removeClass('loading');
+          
+          $(document).on('click', '.selector', function() {
+  $(this).css('border-bottom-color', '#e9e980');
+        $(this).siblings().css('border-bottom-color', '#418477');
+        var target = $(this).attr('rel');
+        $("#"+target).show().siblings("div").hide();
+        $("."+target).show().siblings("ul").hide();
+        $("."+target).show().siblings("div").hide();
+
+});
         }
       })
     }
 
-    if($('.programs-page').length > 0){
+    if(    $('.programs-page').length > 0  && $('body').hasClass('page-programs')  ){
       $.ajax({
-        url: '<?php echo get_site_url()?>/assets/themes/una/includes/all-activities-lazyload.php?v=' + new Date().getTime(),
+              url: '<?php echo get_site_url()?>/assets/themes/una/includes/all-activities-lazyload.php?v=' + new Date().getTime(),
         type: 'get',
         success: function(resp){
           $('#activities_content_wrap').html(resp);
@@ -554,11 +559,13 @@ $(document).on('click', '#grid-button', function() {
           initProgramPage();
         }
       })
-      
-        
- 
     }
     
+});
+
+
+  $(window).on('load', function() {
+	$(".slides").delay(2000).fadeIn(1);
 });
 
 var parallax = document.querySelectorAll(".parallax-hero");
@@ -615,7 +622,15 @@ $(function() {
 });
 
 
+     $('.selector').on('click', function(){
+        $(this).css('border-bottom-color', '#e9e980');
+        $(this).siblings().css('border-bottom-color', '#418477');
+        var target = $(this).attr('rel');
+        $("#"+target).show().siblings("div").hide();
+        $("."+target).show().siblings("ul").hide();
+        $("."+target).show().siblings("div").hide();
 
+     });
 
       $('.selector-loop').on('click', function(){
         $(this).css('border-bottom-color', '#e9e980');
@@ -807,22 +822,6 @@ $('.pages-search-button').css('display', 'none');
 
 $('.top_want_menu a').first().attr('target', '_blank');
 
-    $('.selector').on('click', function(){
-        $(this).css('border-bottom-color', '#e9e980');
-        $(this).siblings().css('border-bottom-color', '#418477');
-        var target = $(this).attr('rel');
-        $("#"+target).show().siblings("div").hide();
-        $("."+target).show().siblings("ul").hide();
-        $("."+target).show().siblings("div").hide();
-
-     });
-     
-     
- 
-     
-
-  
-
 
 });
 
@@ -842,4 +841,3 @@ $(document).on('click', '#btn_show_filter', function(){
   }
 })
 </script>
-

@@ -47,9 +47,9 @@ if( $image ){
     $height = $image['sizes'][ $size . '-height' ]; ?>
 
 
- <a href="<?php echo get_permalink();?>"><div class="calendar-image" style="background-image: url('<?php echo $thumb;  ?>'); background-position: center center ; "></div></a>
+ <a href="<?php echo get_permalink();?>"><div class="calendar-image no-load" style="background-image: url('<?php echo $thumb;  ?>'); background-position: center center ; "></div></a>
                       <?php } else { ?>
-                        <a href="<?php echo get_permalink();?>"><div class="calendar-image" style="background-image: url('<?php custom_url(); ?>/images/UNA-default-img.png'); background-position: center center ; "></div></a>
+                        <a href="<?php echo get_permalink();?>"><div class="calendar-image no-load" style="background-image: url('<?php custom_url(); ?>/images/UNA-default-img.png'); background-position: center center ; "></div></a>
                       <?php } ?> 
 </div>
 

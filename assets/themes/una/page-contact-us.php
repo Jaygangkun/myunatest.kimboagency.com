@@ -10,7 +10,6 @@
 
 <?php include('includes/core-standard.php'); ?>
 
-
 <?php include('includes/helpful.php'); ?>
 
 <?php get_footer(); ?>

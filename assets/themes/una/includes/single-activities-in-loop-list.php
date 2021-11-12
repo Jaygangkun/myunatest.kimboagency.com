@@ -260,7 +260,7 @@
               </div>
             <?php endif; ?>
             
-<!-- when daylight saving starts make adjustment -->
+            <!-- when daylight saving starts make adjustment -->
         
 
 
@@ -282,7 +282,7 @@ $timeInPast = $currentTime - $timeToSubtract;
 $timeRegister = date("Hi", $timeInPast); ?>
 
 <?php //$dateTime = '2021-05-31';
-//$timeRegister = '0800' ?>
+//$timeRegister = '1500' ?>
 
             
             <div class="button-for-registration">
@@ -358,7 +358,7 @@ $timeRegister = date("Hi", $timeInPast); ?>
         </div>
               <?php } ?>
             </div><!--end of registration button-->
-          
+        
           </div><!-- .registration -->
 
           

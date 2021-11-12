@@ -1,0 +1,2 @@
+[15-Jun-2021 21:03:17 UTC] PHP Warning:  session_start(): open(/var/cpanel/php/sessions/ea-php72/sess_d08ad86a6174d5bd13750319a4d1f1b0, O_RDWR) failed: No such file or directory (2) in /home/myuna1021/public_html/assets/addons/helpful/core/helpers/class-user.php on line 124
+[15-Jun-2021 21:03:17 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /var/cpanel/php/sessions/ea-php72) in /home/myuna1021/public_html/assets/addons/helpful/core/helpers/class-user.php on line 124

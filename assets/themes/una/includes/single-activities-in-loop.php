@@ -52,8 +52,6 @@
 
 ?>
 
-
-
 <li class="carousel-cell program <?php echo $dayClasses . " " .$differentCategories . " " .$seasons . " " .$groupCapacity . " " .$classSpace . " " .$classLocation . " " .$lowerProgram; ?>">
   <div class="activities-loop event-column">
     <div class="frontpage-card">
@@ -236,9 +234,8 @@
 
         </div><!-- .registration -->
         </div><!-- details and registration wrapper-->
-      
-      
-      <!-- when daylight saving starts make adjustment -->
+        
+         <!-- when daylight saving starts make adjustment -->
         
 
 
@@ -259,13 +256,7 @@ $timeInPast = $currentTime - $timeToSubtract;
 //Print it out in a human-readable format.
 $timeRegister = date("Hi", $timeInPast); ?>
 
-
-
-
-                       
-
-
-        <?php if($dateTime < $brandNewArray[$i]['RegistrationStartDateOriginal'][0] && $brandNewArray[$i]['Remaining'] > 0   ){ ?>
+  <?php if($dateTime < $brandNewArray[$i]['RegistrationStartDateOriginal'][0] && $brandNewArray[$i]['Remaining'] > 0   ){ ?>
         <div class="button-wrapper-for-program-loop">
         <?php $eventID = $brandNewArray[$i]['ID']; ?>
           <a target="_blank" rel="noopener noreferrer" href="https://myuna.perfectmind.com/SocialSite/BookMe4LandingPages/CoursesLandingPage?courseId=<?php echo $brandNewArray[$i]['ID']; ?>">
@@ -336,6 +327,9 @@ $timeRegister = date("Hi", $timeInPast); ?>
         </a>
         </div>
         <?php }?>
+
+
+       
       </div><!-- .events.content -->
 
     </div><!-- .frontpage-card -->

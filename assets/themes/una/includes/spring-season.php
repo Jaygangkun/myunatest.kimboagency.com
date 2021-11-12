@@ -46,7 +46,7 @@ $springEnding = date("Y-m-d", strtotime($data2[1]['SeasonStartDate'] . '- 1 day'
 
 
 <?php
-$spring_start = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . $springStart . '&endDate=' . $springTwoMonths . '&pageSize=2000';
+$spring_start = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . $springStart . '&endDate=' . $springTwoMonths . '&pageSize=100';
 
 
 
@@ -79,7 +79,7 @@ $spring_start = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDat
 <?php
 
 
-$spring_end = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . $springTwoMonths . '&endDate=' . $springEnding . '&pageSize=2000';
+$spring_end = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . $springTwoMonths . '&endDate=' . $springEnding . '&pageSize=100';
 
 
 
@@ -118,10 +118,6 @@ foreach ($final_array_for_spring as $key => $x) {
   $out[$sub]['ProgramDates'][] = date('M d', strtotime(mb_strimwidth( $text= $x['StartTime'],  0, 19)));
   $out[$sub]['RegistrationEndDate'][] = date('Y-m-d', strtotime(mb_strimwidth( $text= $x['RegistrationEndDate'],  0, 19)));
   $out[$sub]['RegistrationStartDateOriginal'][] = date('Y-m-d', strtotime(mb_strimwidth( $text= $x['RegistrationStartDate'],  0, 19)));
-  
-
-  
-
 
   $out[$sub]['Subject'] = $x['Subject'];
   $out[$sub]['ImageOriginal'] = $x['Image'];

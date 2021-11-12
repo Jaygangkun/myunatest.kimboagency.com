@@ -7,10 +7,8 @@
 
 <div id="activities_loop_1">
   <?php if ( $brandNewArray) { ?>
-  
-  <div class="flexslider">
-    <ul class="slides">   
-  
+<div class="flexslider" style="background: none;">
+    <ul class="slides" >  
     <?php for ($i=0; $i < count($brandNewArray); $i++): ?>
       <?php include('single-activities-in-loop.php'); ?>
     <?php endfor; ?>

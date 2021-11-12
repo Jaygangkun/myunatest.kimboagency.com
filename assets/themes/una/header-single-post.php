@@ -12,9 +12,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="format-detection" content="telephone=no">
-      
-      <meta name="robots" content="noindex">
-
 
       <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
       <link rel="icon" href="<?php custom_url(); ?>/images/favicon.ico" type="image/png" />
@@ -92,9 +89,9 @@
               <span class="tooltiptext">Search</span>
               <i class="fa fa-search"></i>
             </span>
-            <a href="<?php custom_url(); ?>/login" class="tooltip-container">
+            <a href="<?php custom_url(); ?>/login" target="_blank"  class="tooltip-container">
               <span class="tooltiptext">Log In</span>
-              <i class="fas fa-sign-in-alt"></i>
+  <div class="una-login"></div>
             </a>
           </div><!--top_static_options-->
         </div><!--top-level-menu-->
@@ -132,9 +129,10 @@
               <span class="tooltiptext">Search</span>
               <i class="fa fa-search"></i>
             </span>
-            <a href="<?php custom_url(); ?>/login" class="tooltip-container">
+            <a href="<?php custom_url(); ?>/login" class="tooltip-container" target="_blank"
+>
               <span class="tooltiptext">Log In</span>
-              <i class="fas fa-sign-in-alt"></i>
+  <div class="una-login"></div>
             </a>
           </div><!--top_static_options-->
           <div class="top_want_menu_area">

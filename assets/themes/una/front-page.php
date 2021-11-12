@@ -5,13 +5,40 @@
 
 <?php include('includes/latest-news.php'); ?>
 
-<?php include('includes/facility-hours.php'); ?> 
+<?php //include('includes/facility-hours.php'); ?> 
 
 <!-- to test Facility Hours -->
 
 <?php //include('includes/facility-hours-test.php'); ?>
 
+<?php include('includes/overlay-columns.php'); ?>
 
+
+<?php
+  $ch = curl_init();
+  $today_date = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . date("Y-6-1") . '&endDate=' . date("Y-7-30");
+  $today_date_test = 'https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=' . date("Y-n-j") . '&endDate=' . date("Y-5-30");
+  curl_setopt_array($ch, array(
+   //  CURLOPT_URL => "https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=2020-4-1&endDate=2020-5-30",
+   //  CURLOPT_URL => "https://myuna.perfectmind.com/api/2.0/B2C/Appointments?startDate=2020-1-20&endDate=2020-1-20",
+    CURLOPT_URL => "$today_date",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_HTTPHEADER => array(
+      "X-Access-Key: 5I8bxF2WG9nFZ0rf5zxW3tGlN0aSJDr9",
+      "X-Client-Number: 24588"
+    ),
+  ));
+
+  $response = curl_exec($ch);
+  curl_close($ch);
+  $array = json_decode($response,true);
+  $results_array = $array['Result'];
+?>
 
 <!--hide this for launch-->
 <div class="section-wrapper events-section" style="display: none">
@@ -55,6 +82,7 @@
  
 </div><!-- .section-wrapper -->
 
+
 <style type="text/css">
    .loading #featured_programs_lazyload_waiting{
       display: block;
@@ -71,13 +99,12 @@
       <?php include('includes/featured-programs.php'); ?>
    </div>
    <div id="featured_programs_lazyload_waiting">
-      <img src="<?php echo get_site_url()?>/assets/addons/loading-page/loading-screens/logo/images/08.svg" style="cursor:pointer;width:60px;">
+       <img src="<?php custom_url(); ?>/images/loading-screen.svg" style="cursor:pointer;width:60px;">
    </div>
 </div>
 
 <?php include('includes/all-events-calendar.php'); ?>
 
 <?php include('includes/core-standard.php'); ?>
-
 
 <?php get_footer(); ?>

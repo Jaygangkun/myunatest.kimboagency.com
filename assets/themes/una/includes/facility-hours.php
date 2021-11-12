@@ -99,8 +99,8 @@ Open for Limited Services</div>
 Open for Limited Services</div>
                 </div>
                 <h4 class="category">Fitness Centre</h4>
-               <div class="facilities-hours-info"><i class="fa fa-clock-o" aria-hidden="true"></i>
-Closed Due to COVID-19</div>
+               <div class="facilities-hours-info open"><i class="fa fa-clock-o" aria-hidden="true"></i>
+Open for Limited Services</div>
             </div>
          </div>
          <div class="col-lg-4 col-md-4 col-sm-12">
@@ -112,8 +112,8 @@ Closed Due to COVID-19</div>
 </a>
                   <h4 class="category">Main Office</h4>
 
-                  <div class="facilities-hours-info"><i class="fa fa-clock-o" aria-hidden="true"></i>
-Closed Due to COVID-19</div>
+                  <div class="facilities-hours-info open"><i class="fa fa-clock-o" aria-hidden="true"></i>
+Open for Limited Services</div>
 
                </div>
                <h4 class="category">Green Depot</h4>
