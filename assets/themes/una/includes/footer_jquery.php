@@ -505,6 +505,7 @@ $('#grid-button').click(function() {
 $(window).on('load', function() {
 
     if($('.front-page').length > 0){
+      $('#featured_programs_lazyload').removeClass('loading');
       $('.events-section .flexslider').flexslider({
         // slideshowSpeed:	3000,
         animation: 'slide',
@@ -515,10 +516,8 @@ $(window).on('load', function() {
         minItems: 1,
         maxItems: 3,
       });
-      $('.flex-viewport').addClass('container');
-      $(".slides").delay(2000).fadeIn(1);
-
-      $('#featured_programs_lazyload').removeClass('loading');
+      // $('.flex-viewport').addClass('container');
+      // $(".slides").delay(2000).fadeIn(1);
       
       $(document).on('click', '.selector', function() {
         $(this).css('border-bottom-color', '#e9e980');
@@ -541,10 +540,11 @@ $(window).on('load', function() {
         minItems: 1,
         maxItems: 3,
       });
-      $('.flex-viewport').addClass('container');
-      $(".slides").delay(2000).fadeIn(1);
+      // $('.flex-viewport').addClass('container');
+      // $(".slides").delay(2000).fadeIn(1);
 
       $('#activities_content').removeClass('loading');
+      $('.init-ui').empty();
       initProgramPage();
     }
     

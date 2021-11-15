@@ -82,8 +82,34 @@
  
 </div><!-- .section-wrapper -->
 
+<style type="text/css">
+   .loading #featured_programs_lazyload_waiting{
+      display: block;
+   }
 
-<?php echo do_shortcode("[myuna-featured-programs]")?>
+   #featured_programs_lazyload_waiting{
+      display: none;
+      text-align: center;
+      padding-bottom: 35px;
+   }
+
+   .loading #featured_programs_lazyload_content {
+      display: none;
+   }
+
+   #featured_programs_lazyload .flexslider .slides > li {
+      width: auto !important;
+   }
+</style>
+<div id="featured_programs_lazyload" class="loading front-page">
+   <div id="featured_programs_lazyload_content">
+      <?php echo do_shortcode("[myuna-featured-programs]")?>
+   </div>
+   <div id="featured_programs_lazyload_waiting">
+      <h2 class="frontpage-section-headline news-section">Featured Programs</h2>
+      <img src="<?php custom_url(); ?>/images/loading-screen.svg" style="cursor:pointer;width:60px;">
+   </div>
+</div>
 
 <?php include('includes/all-events-calendar.php'); ?>
 
