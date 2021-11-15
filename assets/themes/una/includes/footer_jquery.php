@@ -136,6 +136,7 @@ function initProgramPage(){
 
   // --------------- //
   
+  $('.filtered-programs-section').show();
   // quick search regex
 var qsRegex;
 var buttonFilter;
@@ -491,6 +492,7 @@ $('#grid-button').click(function() {
 
 });
 
+
   }
 
 
@@ -503,62 +505,47 @@ $('#grid-button').click(function() {
 $(window).on('load', function() {
 
     if($('.front-page').length > 0){
-      $.ajax({
-        url: '<?php echo get_site_url()?>/assets/themes/una/includes/featured-programs-lazyload.php',
-        type: 'get',
-        success: function(resp){
-          $('#featured_programs_lazyload_content').html(resp);
-          $('.events-section .flexslider').flexslider({
-            // slideshowSpeed:	3000,
-            animation: 'slide',
-            itemWidth: 349,
-            itemMargin: 32,
-            touch: true,
-            slideshow: true,
-            minItems: 1,
-            maxItems: 3,
-          });
-          $('.flex-viewport').addClass('container');
-          $(".slides").delay(2000).fadeIn(1);
+      $('.events-section .flexslider').flexslider({
+        // slideshowSpeed:	3000,
+        animation: 'slide',
+        itemWidth: 349,
+        itemMargin: 32,
+        touch: true,
+        slideshow: true,
+        minItems: 1,
+        maxItems: 3,
+      });
+      $('.flex-viewport').addClass('container');
+      $(".slides").delay(2000).fadeIn(1);
 
-          $('#featured_programs_lazyload').removeClass('loading');
-          
-          $(document).on('click', '.selector', function() {
-  $(this).css('border-bottom-color', '#e9e980');
+      $('#featured_programs_lazyload').removeClass('loading');
+      
+      $(document).on('click', '.selector', function() {
+        $(this).css('border-bottom-color', '#e9e980');
         $(this).siblings().css('border-bottom-color', '#418477');
         var target = $(this).attr('rel');
         $("#"+target).show().siblings("div").hide();
         $("."+target).show().siblings("ul").hide();
         $("."+target).show().siblings("div").hide();
-
-});
-        }
-      })
+      });
     }
 
-    if(    $('.programs-page').length > 0  && $('body').hasClass('page-programs')  ){
-      $.ajax({
-              url: '<?php echo get_site_url()?>/assets/themes/una/includes/all-activities-lazyload.php?v=' + new Date().getTime(),
-        type: 'get',
-        success: function(resp){
-          $('#activities_content_wrap').html(resp);
-          $('.events-section .flexslider').flexslider({
-            // slideshowSpeed:	3000,
-            animation: 'slide',
-            itemWidth: 349,
-            itemMargin: 32,
-            touch: true,
-            slideshow: true,
-            minItems: 1,
-            maxItems: 3,
-          });
-          $('.flex-viewport').addClass('container');
-          $(".slides").delay(2000).fadeIn(1);
+    if(    $('.myuna-all-programs').length > 0){
+      $('.events-section .flexslider').flexslider({
+        // slideshowSpeed:	3000,
+        animation: 'slide',
+        itemWidth: 349,
+        itemMargin: 32,
+        touch: true,
+        slideshow: true,
+        minItems: 1,
+        maxItems: 3,
+      });
+      $('.flex-viewport').addClass('container');
+      $(".slides").delay(2000).fadeIn(1);
 
-          $('#activities_content').removeClass('loading');
-          initProgramPage();
-        }
-      })
+      $('#activities_content').removeClass('loading');
+      initProgramPage();
     }
     
 });

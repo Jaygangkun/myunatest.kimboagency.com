@@ -83,25 +83,7 @@
 </div><!-- .section-wrapper -->
 
 
-<style type="text/css">
-   .loading #featured_programs_lazyload_waiting{
-      display: block;
-   }
-
-   #featured_programs_lazyload_waiting{
-      display: none;
-      text-align: center;
-      padding-bottom: 35px;
-   }
-</style>
-<div id="featured_programs_lazyload" class="loading front-page">
-   <div id="featured_programs_lazyload_content">
-      <?php include('includes/featured-programs.php'); ?>
-   </div>
-   <div id="featured_programs_lazyload_waiting">
-       <img src="<?php custom_url(); ?>/images/loading-screen.svg" style="cursor:pointer;width:60px;">
-   </div>
-</div>
+<?php echo do_shortcode("[myuna-featured-programs]")?>
 
 <?php include('includes/all-events-calendar.php'); ?>
 

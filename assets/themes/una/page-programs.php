@@ -8,26 +8,8 @@
 
 <div class="events-section">
 <div class="activities-time-loop sixty">
-    <style type="text/css">
-        #activities_content_lazy_waiting{
-            display: none;
-            text-align: center;
-        }
-
-        .loading #activities_content_lazy_waiting{
-            display: block;
-        }
-    </style>
-    <div id="activities_content" class="loading programs-page">
-        <div id="activities_content_wrap">
-            <?php include('includes/all-activities.php'); ?>
-        </div>
-        <div id="activities_content_lazy_waiting">
-            
-           
-    
-              <img src="<?php custom_url(); ?>/images/loading-screen.svg" style="cursor:pointer;width:60px;">
-        </div>
+    <div class="myuna-all-programs">
+        <?php echo do_shortcode("[myuna-all-programs]")?>
     </div>
 </div>
 </div>
