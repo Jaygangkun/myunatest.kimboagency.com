@@ -32,7 +32,7 @@
             <div class="init-ui">
                 <?php include('includes/all-activities.php'); ?>
             </div>
-            <img src="<?php custom_url(); ?>/images/loading-screen.svg" style="cursor:pointer;width:60px;">
+            <img src="<?php custom_url(); ?>/images/loading-screen.gif" style="cursor:pointer;width:60px;">
         </div>
     </div>
 </div>

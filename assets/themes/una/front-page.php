@@ -107,7 +107,7 @@
    </div>
    <div id="featured_programs_lazyload_waiting">
       <h2 class="frontpage-section-headline news-section">Featured Programs</h2>
-      <img src="<?php custom_url(); ?>/images/loading-screen.svg" style="cursor:pointer;width:60px;">
+      <img src="<?php custom_url(); ?>/images/loading-screen.gif" style="cursor:pointer;width:60px;">
    </div>
 </div>
 
