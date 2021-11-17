@@ -442,6 +442,7 @@ function debounce( fn, threshold ) {
 
 
   $filterSeason.val('.fall').trigger('change');
+  $filterAge.val('.youth').trigger('change');
 
   $("option[value='.fitness-centre-access']").remove();
 
