@@ -442,7 +442,7 @@ function debounce( fn, threshold ) {
 
 
   $filterSeason.val('.fall').trigger('change');
-  $filterAge.val('.youth').trigger('change');
+  // $filterAge.val('.youth').trigger('change');
 
   $("option[value='.fitness-centre-access']").remove();
 
@@ -502,6 +502,10 @@ $('#grid-button').click(function() {
 
 
 <?php /**************************** SEARCH BAR ************************************/ ?>
+
+if($('#loading_img_wrap').length > 0) {
+  $('#loading_img_wrap').html('<img src="' + $('#loading_img_wrap').attr('loading-img-url') + '/images/loading-screen.gif" style="cursor:pointer;width:60px;">')
+}
 
 $(window).on('load', function() {
 

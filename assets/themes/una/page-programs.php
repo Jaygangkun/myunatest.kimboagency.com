@@ -21,6 +21,10 @@
         .loading #activities_content_wrap {
             display: none;
         }
+
+        #loading_img_wrap {
+            display: inline-block;
+        }
     </style>
     <div id="activities_content" class="loading programs-page">
         <div id="activities_content_wrap">
@@ -32,7 +36,9 @@
             <div class="init-ui">
                 <?php include('includes/all-activities.php'); ?>
             </div>
-            <img src="<?php custom_url(); ?>/images/loading-screen.gif" style="cursor:pointer;width:60px;">
+            <div id="loading_img_wrap" loading-img-url="<?php custom_url(); ?>">
+                <img src="<?php custom_url(); ?>/images/loading-screen.gif" style="cursor:pointer;width:60px;">
+            </div>
         </div>
     </div>
 </div>

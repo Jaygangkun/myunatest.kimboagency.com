@@ -100,6 +100,10 @@
    #featured_programs_lazyload .flexslider .slides > li {
       width: auto !important;
    }
+
+   #loading_img_wrap {
+      display: inline-block;
+   }
 </style>
 <div id="featured_programs_lazyload" class="loading front-page">
    <div id="featured_programs_lazyload_content">
@@ -107,7 +111,9 @@
    </div>
    <div id="featured_programs_lazyload_waiting">
       <h2 class="frontpage-section-headline news-section">Featured Programs</h2>
-      <img src="<?php custom_url(); ?>/images/loading-screen.gif" style="cursor:pointer;width:60px;">
+      <div id="loading_img_wrap" loading-img-url="<?php custom_url(); ?>">
+         <img src="<?php custom_url(); ?>/images/loading-screen.gif" style="cursor:pointer;width:60px;">
+      </div>
    </div>
 </div>
 
